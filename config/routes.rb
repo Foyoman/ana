@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
 
-  resources :users, :except => [:edit]
+  resources :users
   resources :anas, :except => [:index]
   resources :anecdotes
   resources :tags, :only => [:index, :new, :create, :destroy]

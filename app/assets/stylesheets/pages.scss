@@ -1,3 +1,22 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.tags {
+    font-size: 14px;
+}
+
+.anas {
+    display: flex;
+    gap: 2em;
+}
+
+.ana {
+    max-width: 30%;
+}
+

@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>anas</h1>
+<div class="anas">
+    <% @anas.each do |ana| %>
+        <div class="ana">    
+            <% tag_array = [] %>
+            <h3>
+                <%= ana.title %>
+            </h3>
+            <% ana.anecdotes.each do |content| %>
+                <p>
+                    <%= content.content %>
+                </p>
+            <% end %>
+            <p class="tags">
+                <% ana.anecdotes.each do |ana_anecdote| %>
+                    <% ana_anecdote.tags.each do |tag| %>
+                        <% tag_array << tag.name %>
+                    <% end %>
+                <% end %>
+                <%= tag_array.uniq.join(', ') %>
+            </p>
+        </div>
+    <% end %>
+</div>

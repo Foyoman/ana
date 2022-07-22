@@ -7,42 +7,6 @@ puts "#{ User.count } users"
 
 # End users #
 
-# Anecdotes #
-
-Anecdote.destroy_all
-
-d1 = Anecdote.create :title => 'test d1', :content => 'test d1 content family relationship'
-d2 = Anecdote.create :title => 'test d2', :content => 'test d2 content anxiety'
-d3 = Anecdote.create :title => 'test d3', :content => 'test d3 content loss of a loved one family'
-d4 = Anecdote.create :title => 'test d4', :content => 'test d4 content body'
-d5 = Anecdote.create :title => 'test d5', :content => 'test d5 content family'
-d6 = Anecdote.create :title => 'test d6', :content => 'test d6 content acdemia pet'
-d7 = Anecdote.create :title => 'test d7', :content => 'test d7 content pet depression'
-puts "#{ Anecdote.count } anecdotes"
-
-# End anecdotes #
-
-# Anas #
-
-Ana.destroy_all
-
-a1 = Anecdote.new
-# a1.anecdotes << d2 << d3
-# a1.content = a1.anecdotes.map{|anecdote| anecdote[:content]}.join "\n"
-# a1.tags = a1.anecdotes.tags
-a1.title = 'Family and studies'
-a1.user = u1
-a1.save
-
-a2 = Anecdote.new
-# a2.anecdotes << d6 << d7
-# a2.content = a2.anecdotes.map{|anecdote| anecdote[:content]}.join "\n"
-a2.title = 'Donut, my dawg'
-a2.save
-puts "#{ Ana.count } anas"
-
-# End anas #
-
 # Tags #
 
 Tag.destroy_all
@@ -58,3 +22,53 @@ t8 = Tag.create :name => 'depression'
 puts "#{ Tag.count } tags"
 
 # End tags #
+
+# Anecdotes #
+
+Anecdote.destroy_all
+
+d1 = Anecdote.create :title => 'test d1', :content => 'test d1 content family relationship'
+d1.tags << t1 << t2
+
+d2 = Anecdote.create :title => 'test d2', :content => 'test d2 content anxiety'
+d2.tags << t7
+
+d3 = Anecdote.create :title => 'test d3', :content => 'test d3 content loss of a loved one family'
+d3.tags << t1 << t4
+
+d4 = Anecdote.create :title => 'test d4', :content => 'test d4 content body'
+d4.tags << t5
+
+d5 = Anecdote.create :title => 'test d5', :content => 'test d5 content family'
+d5.tags << t1
+
+d6 = Anecdote.create :title => 'test d6', :content => 'test d6 content acdemia pet'
+d6.tags << t3 << t6
+
+d7 = Anecdote.create :title => 'test d7', :content => 'test d7 content pet depression'
+d7.tags << t6 << t8
+
+puts "#{ Anecdote.count } anecdotes"
+
+# End anecdotes #
+
+# Anas #
+
+Ana.destroy_all
+
+a1 = Ana.new
+a1.anecdotes << d2 << d3
+a1.content = a1.anecdotes.map{|anecdote| anecdote[:content]}
+# a1.tags = a1.anecdotes.tags
+a1.title = 'Family and studies'
+a1.user = u1
+a1.save
+
+a2 = Ana.new
+a2.anecdotes << d6 << d7
+a2.content = a2.anecdotes.map{|anecdote| anecdote[:content]}
+a2.title = 'Donut, my dawg'
+a2.save
+puts "#{ Ana.count } anas"
+
+# End anas #
