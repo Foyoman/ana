@@ -26,6 +26,7 @@ t12 = Tag.create :name => 'life lessons'
 t13 = Tag.create :name => 'health'
 t14 = Tag.create :name => 'work'
 t15 = Tag.create :name => 'friends'
+t16 = Tag.create :name => 'social life'
 puts "#{ Tag.count } tags"
 
 # End tags #
@@ -44,7 +45,7 @@ d3 = Anecdote.create :title => 'Sometimes its good not to force things', :conten
 d3.tags << t11 << t12 
 
 d4 = Anecdote.create :title => "Work to live, don't live to work", :content => 'Your life outside of work is equally as important. After going through a little work rut (feeling resentful and negative about long hours etc) I realised that I need to prioritise seeing my family, friends and making the time to do the things I love like cooking and pottery.'
-d4.tags << t1 << t14 << t15
+d4.tags << t1 << t14 << t15 << t16
 
 d5 = Anecdote.create :title => 'test d5', :content => 'test d5 content family'
 d5.tags << t1

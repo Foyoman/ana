@@ -32,6 +32,10 @@ nav {
     border-bottom: 1px solid white;
 }
 
+nav a {
+    font-size: 18px;
+}
+
 .logo {
     margin: 0;
     padding: 0;
@@ -88,10 +92,6 @@ nav {
     max-width: 100%;
     border: 1px solid white;
     border-radius: 0.5em;
-}
-
-.field_with_errors {
-    display: inline;
 }
 
 .tags {
@@ -172,4 +172,32 @@ a {
 .submit {
     display: block;
     margin: 0 auto;
+}
+
+.field_with_errors {
+    display: inline;
+}
+
+input {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 0.5em;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.new_user label {
+    display: block;
+}
+
+.new_user input {
+    transition: all 0.1s;
+    display: block;
+    margin: 0.5em 0;
+}
+
+.sign-up:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
 }

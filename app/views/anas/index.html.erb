@@ -1,0 +1,29 @@
+<h1>anas</h1>
+<div class="anas">
+    <% @anas.each do |ana| %>
+        <div class="ana">    
+            <% tag_array = [] %>
+            <div class="ana-title-content">
+                <h3>
+                    <%= ana.title %>
+                </h3>
+                <% ana.anecdotes.each do |content| %>
+                    <p>
+                        "<%= content.content %>"
+                    </p>
+                <% end %>
+            </div>
+            <div class="tags">
+                <% ana.anecdotes.each do |ana_anecdote| %>
+                    <% ana_anecdote.tags.each do |tag| %>
+                        <% tag_array << tag.name %>
+                    <% end %>
+                <% end %>
+                <% tag_array.uniq.each do |tag| %>
+                    <div class="tag"><%= tag %></div>
+                <% end %>
+            </div>
+           
+        </div>
+    <% end %>
+</div>

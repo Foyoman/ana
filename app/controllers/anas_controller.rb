@@ -1,4 +1,8 @@
 class AnasController < ApplicationController
+  def index
+    @anas = Ana.all
+  end
+
   def show
   end
 

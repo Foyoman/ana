@@ -17,15 +17,17 @@
           <p class="definition">noun /ˈɑːnə/ : a collection of memorable sayings, or anecdotes.</p>
         </div>
         <div class="links">
-          <%= link_to 'Home', root_path %>
-          <%= link_to 'Anecdotes', anecdotes_path %>
+          <%= @current_user.username if @current_user.present? %>
+          <%= link_to 'home', root_path %>
+          <%= link_to 'anas', anas_path %>
+          <%= link_to 'anecdotes', anecdotes_path %>
           <% if @current_user.present? %>
-            <%= link_to "All users", users_path if @current_user.admin? %>
+            <%= link_to "all users", users_path if @current_user.admin? %>
             <%# link_to "Contributions", user_path %>
-            <%= link_to "Logout #{ @current_user.username }", login_path, :method => 'delete' %>
+            <%= link_to "logout", login_path, :method => 'delete' %>
           <% else%>
-            <%= link_to 'Sign up', new_user_path %>
-            <%= link_to 'Sign in', login_path %>
+            <%= link_to 'sign up', new_user_path %>
+            <%= link_to 'sign in', login_path %>
           <% end %>
         </div>
       </nav>
