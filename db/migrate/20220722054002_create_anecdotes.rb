@@ -6,6 +6,7 @@ class CreateAnecdotes < ActiveRecord::Migration[5.2]
       t.integer :upvotes, default: 0
       t.integer :favourites, default: 0
       t.integer :user_id
+      t.integer :tag_id
       t.timestamps
     end
   end

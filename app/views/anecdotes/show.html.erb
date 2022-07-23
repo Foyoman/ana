@@ -1,2 +1,11 @@
-<h1>Anecdotes#show</h1>
-<p>Find me in app/views/anecdotes/show.html.erb</p>
+<h1><%= @anecdote.title %></h1>
+<p><%= @anecdote.content %></p>
+<% if @anecdote.tags.empty? %>
+    <p>tag your anecdote</p>
+<% end %>
+
+<% @anecdote.tags.each do |tag| %>
+    <div class="tag">
+        <%= tag.name %>
+    </div>
+<% end %>

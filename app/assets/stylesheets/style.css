@@ -103,17 +103,11 @@ nav a {
 
 .tag {
     transition: all 0.1s;
-    cursor: pointer;
     display: inline-flex;
     border: 1px solid white;
     border-radius: 0.3em;
     padding: 0.2em;
     margin: 0.2em;
-}
-
-.tag:hover {
-    background-color: white;
-    color: black;
 }
 
 .discretion {
@@ -137,18 +131,6 @@ a {
     gap: 0.5em;
 }
 
-.title-input {
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    border-radius: 0.5em;
-    resize: none;
-    display: inline;
-    height: 1.2em;
-    width: 31em;
-    overflow: hidden;
-}
-
 .content-input {
     display: block;
     margin: 1em auto;
@@ -164,7 +146,6 @@ a {
     padding: 0.2em;
     /* margin: 0.2em; */
     white-space: normal;
-    overflow-wrap: break-word;
     overflow: hidden;
 }
 
@@ -172,9 +153,8 @@ a {
     border: 2px solid white;
 }
 
-.submit {
-    display: block;
-    margin: 0 auto;
+.content-input, .anecdote {
+    overflow-wrap: break-word;
 }
 
 .field_with_errors {
@@ -182,6 +162,7 @@ a {
 }
 
 input {
+    transition: all 0.15s;
     background-color: black;
     color: white;
     border: 1px solid white;
@@ -189,23 +170,14 @@ input {
     font-family: 'Roboto Mono', monospace;
 }
 
-/* .new_user label {
-    display: block;
-}
-
-.new_user input {
-    transition: all 0.1s;
-    display: block;
-    margin: 0.5em 0;
-} */
-
 .user-form {
     max-width: 30%;
     text-align: center;
     margin: 0 auto;
 }
 
-#user_username {
+#user_username, #username {
+    box-sizing: border-box;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     width: 100%;
@@ -214,6 +186,7 @@ input {
 }
 
 #user_password {
+    box-sizing: border-box;
     border-top: none;
     border-bottom: none;
     border-radius: 0;
@@ -222,7 +195,8 @@ input {
     font-size: large;
 }
 
-#user_password_confirmation {
+#user_password_confirmation, #password {
+    box-sizing: border-box;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     width: 100%;
@@ -230,16 +204,32 @@ input {
     font-size: large;
 }
 
-.sign-up {
-    width: 100%;
+.sign-up, .log, .submit {
     height: 2em;
     font-size: large;
 }
 
-.sign-up:hover {
+.sign-up, .log {
+    width: 100%;
+}
+
+.sign-up:hover, .log:hover, .submit:hover, .tag:hover {
     background-color: white;
     color: black;
     cursor: pointer;
+}
+
+.submit {
+    width: 30%;
+    height: 2em;
+    font-size: large;
+    display: block;
+    margin: 0.5em auto;
+}
+
+.tags-checks {
+    width: 50%;
+    margin: 0 auto;
 }
 
 @media only screen and (max-width: 785px) {

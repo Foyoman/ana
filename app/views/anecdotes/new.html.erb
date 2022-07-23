@@ -1,14 +1,19 @@
-<h1>Your new anecdote</h1>
-<p>Tell a story, share some advice, let out some emotions, anything you please.</p>
-<p class="discretion">Discretion: ana is a public web-app, please do not share any private information or names, and please respect the privacy of others.</p>
+<h1>your new anecdote</h1>
+<p>tell a story, share some advice, let out some emotions, anything you please.</p>
+<p class="discretion">discretion: ana is a public web-app, please do not share any private information or names, and please respect the privacy of others.</p>
 
 <%= form_for @anecdote do |f| %>
     <div class="title">
-        <%= f.label 'Title:' %>
-        <%= f.text_area :title, :class =>  'title-input', :maxlength => 50 %>
+        <%= f.label 'title:' %>
+        <%= f.text_field :title, :class =>  'title-input', :maxlength => 50 %>
     </div>
 
-    <%= f.text_area :content, :class => 'content-input', :maxlength => 1000 %>
+    <%= f.text_area :content, :class => 'content-input', :placeholder => 'start your story...', :maxlength => 1000 %>
+    
+    <div class="tags-checks">
+        <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name, { hide_label: true }, :class => 'tag-check' %>
+    </div>
 
-    <%= f.submit 'wow', :class => 'submit' %>
+
+    <%= f.submit 'contribute', :class => 'submit' %>
 <% end %>

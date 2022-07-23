@@ -1,4 +1,17 @@
-<h1>Welcome<% if @current_user.present? %>,
+<h1>welcome<% if @current_user.present? %>,
         <%= @current_user.username %>
     <% end %>
 </h1>
+
+<% unless @current_user.present? %>
+<p>we all have moments where we need to get something off our chests, and we all have moments where we feel alone in the struggles we go through. ana is a web-app designed to provide a medium for people to express themselves, and to be exposed to anecdotes from other people's lives who may have lived through similar moments</p>
+
+<p><%= link_to 'contribute an anecdote', anecdotes_path %> if you have an anecdote you'd like to share to the world. your story may offer wisdom for others to help them overcome their hardships, or you may even help someone feel validated and their emotions rationalised through the acknowledgement that someone else has felt what they have.</p>
+
+<p><%= link_to 'generate an ana', anas_path %> if you wish to read up on a collection of anecdotes from a context of your choosing. it can be rough to feel like you're alone in what you're going through, and sometimes it can help to read how others have dealt with similar scenarios.</p>
+<% end %>
+
+<% if @current_user.present? %>
+<h2>your feed</h2>
+
+<% end %>

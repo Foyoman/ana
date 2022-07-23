@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_07_22_074215) do
     t.integer "upvotes", default: 0
     t.integer "favourites", default: 0
     t.integer "user_id"
+    t.integer "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
