@@ -1,2 +1,14 @@
-<h1>Anecdotes#new</h1>
-<p>Find me in app/views/anecdotes/new.html.erb</p>
+<h1>Your new anecdote</h1>
+<p>Tell a story, share some advice, let out some emotions, anything you please.</p>
+<p class="discretion">Discretion: ana is a public web-app, please do not share any private information or names, and please respect the privacy of others.</p>
+
+<%= form_for @anecdote do |f| %>
+    <div class="title">
+        <%= f.label 'Title:' %>
+        <%= f.text_area :title, :class =>  'title-input', :maxlength => 50 %>
+    </div>
+
+    <%= f.text_area :content, :class => 'content-input', :maxlength => 1000 %>
+
+    <%= f.submit 'wow', :class => 'submit' %>
+<% end %>

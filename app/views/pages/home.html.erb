@@ -3,22 +3,27 @@
     <% @anas.each do |ana| %>
         <div class="ana">    
             <% tag_array = [] %>
-            <h3>
-                <%= ana.title %>
-            </h3>
-            <% ana.anecdotes.each do |content| %>
-                <p>
-                    <%= content.content %>
-                </p>
-            <% end %>
-            <p class="tags">
+            <div class="ana-title-content">
+                <h3>
+                    <%= ana.title %>
+                </h3>
+                <% ana.anecdotes.each do |content| %>
+                    <p>
+                        <%= content.content %>
+                    </p>
+                <% end %>
+            </div>
+            <div class="tags">
                 <% ana.anecdotes.each do |ana_anecdote| %>
                     <% ana_anecdote.tags.each do |tag| %>
                         <% tag_array << tag.name %>
                     <% end %>
                 <% end %>
-                <%= tag_array.uniq.join(', ') %>
-            </p>
+                <% tag_array.uniq.each do |tag| %>
+                    <div class="tag"><%= tag %></div>
+                <% end %>
+            </div>
+           
         </div>
     <% end %>
 </div>

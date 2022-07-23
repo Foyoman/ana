@@ -12,17 +12,24 @@
   <body>
     <div class="container">
       <nav>
-        <%= link_to 'Home', root_path %>
-    
-        <% if @current_user.present? %>
-          <%= link_to "All users", users_path if @current_user.admin? %>
-          <%# link_to "Contributions", user_path %>
-          <%= link_to "Logout #{ @current_user.username }", login_path, :method => 'delete' %>
-        <% else%>
-          <%= link_to 'Sign up', new_user_path %>
-          <%= link_to 'Sign in', login_path %>
-        <% end %>
+        <div class="logo">
+          <h1>ana</h1>
+          <p class="definition">noun /ˈɑːnə/ : a collection of memorable sayings, or anecdotes.</p>
+        </div>
+        <div class="links">
+          <%= link_to 'Home', root_path %>
+          <%= link_to 'Anecdotes', anecdotes_path %>
+          <% if @current_user.present? %>
+            <%= link_to "All users", users_path if @current_user.admin? %>
+            <%# link_to "Contributions", user_path %>
+            <%= link_to "Logout #{ @current_user.username }", login_path, :method => 'delete' %>
+          <% else%>
+            <%= link_to 'Sign up', new_user_path %>
+            <%= link_to 'Sign in', login_path %>
+          <% end %>
+        </div>
       </nav>
+      <div class="space"></div>
       <%= yield %>
     </div>  
   </body>
