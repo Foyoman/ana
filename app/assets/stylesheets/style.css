@@ -23,9 +23,12 @@ body {
 nav {
     width: 100%;
     max-width: 960px;
+    max-height: 90px;
+    min-height: 90px;
     background-color: black;
     position: fixed;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin: 0;
     padding: 0;
@@ -186,7 +189,7 @@ input {
     font-family: 'Roboto Mono', monospace;
 }
 
-.new_user label {
+/* .new_user label {
     display: block;
 }
 
@@ -194,6 +197,43 @@ input {
     transition: all 0.1s;
     display: block;
     margin: 0.5em 0;
+} */
+
+.user-form {
+    max-width: 30%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#user_username {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+    height: 2em;
+    font-size: large;
+}
+
+#user_password {
+    border-top: none;
+    border-bottom: none;
+    border-radius: 0;
+    width: 100%;
+    height: 2em;
+    font-size: large;
+}
+
+#user_password_confirmation {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 100%;
+    height: 2em;
+    font-size: large;
+}
+
+.sign-up {
+    width: 100%;
+    height: 2em;
+    font-size: large;
 }
 
 .sign-up:hover {
@@ -201,3 +241,9 @@ input {
     color: black;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 785px) {
+    .definition {
+      display: none;
+    }
+  }

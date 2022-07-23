@@ -1,19 +1,26 @@
-<h1>Sign up</h1>
-
-<% if @user.errors.any? %>
+<div class="user-form">
+    <h1>create account</h1>
+    <% if @user.errors.any? %>
     <ol>
         <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <li><%= msg.downcase %></li>
         <% end %>
     </ol>
-<% end %>
-
-<%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username, :maxlength => 20 %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    <%= f.submit "Sign up", :class => 'sign-up' %>
-<% end %>
+    <% end %>
+    <%= form_for @user do |f| %>
+        <div class="username">
+            <%# f.label :username %>
+            <%= f.text_field :username, :maxlength => 20, :placeholder => 'username' %>
+        </div>
+        <div id="password">
+            <%# f.label :password %>
+            <%= f.password_field :password, :placeholder => 'password' %>
+        </div>
+        <div class="pass-confirm">
+            <%# f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, :placeholder => 'confirm password' %>
+        </div>
+        <br>
+        <%= f.submit "Sign up", :class => 'sign-up' %>
+    <% end %>
+</div>
