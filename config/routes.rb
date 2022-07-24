@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :anas
   resources :anecdotes
-  resources :tags, :only => [:index, :new, :create, :destroy]
+  resources :tags, :except => [:edit]
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'

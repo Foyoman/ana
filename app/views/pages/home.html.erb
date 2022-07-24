@@ -9,6 +9,8 @@
 <p><%= link_to 'contribute an anecdote', anecdotes_path %> if you have an anecdote you'd like to share to the world. your story may offer wisdom for others to help them overcome their hardships, or you may even help someone feel validated and their emotions rationalised through the acknowledgement that someone else has felt what they have.</p>
 
 <p><%= link_to 'generate an ana', anas_path %> if you wish to read up on a collection of anecdotes from a context of your choosing. it can be rough to feel like you're alone in what you're going through, and sometimes it can help to read how others have dealt with similar scenarios.</p>
+
+<p>Create an account and <%= link_to 'follow tags' %> to customise your feed.</p>
 <% end %>
 
 <% if @current_user.present? %>

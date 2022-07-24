@@ -21,6 +21,7 @@
           <%= link_to 'home', root_path %>
           <%= link_to 'anas', anas_path %>
           <%= link_to 'anecdotes', anecdotes_path %>
+          <%= link_to 'tags', tags_path %>
           <% if @current_user.present? %>
             <%= link_to "all users", users_path if @current_user.admin? %>
             <%# link_to "Contributions", user_path %>
