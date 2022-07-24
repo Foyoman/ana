@@ -17,7 +17,7 @@
           <p class="definition">noun /ˈɑːnə/ : a collection of memorable sayings, or anecdotes.</p>
         </div>
         <div class="links">
-          <%= @current_user.username if @current_user.present? %>
+          <%= link_to @current_user.username, edit_user_path(@current_user) if @current_user.present? %>
           <%= link_to 'home', root_path %>
           <%= link_to 'anas', anas_path %>
           <%= link_to 'anecdotes', anecdotes_path %>

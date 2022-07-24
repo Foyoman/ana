@@ -14,7 +14,8 @@ class AnecdotesController < ApplicationController
 
   def create
     anecdote = Anecdote.create anecdote_params
-    tag_ids = params[:anecdote][:tag_ids].drop 1
+    @current_user.anecdotes << anecdote
+    tag_ids = params[:anecdote][:tag_ids].reject(&:empty?)
     tag_ids.map(&:to_i).each do |tag_id|
       tag = Tag.find tag_id
       anecdote.tags << tag

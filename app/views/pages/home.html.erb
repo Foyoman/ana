@@ -14,6 +14,36 @@
 <% end %>
 
 <% if @current_user.present? %>
-<h2>your feed</h2>
-
+    <h2>your feed</h2>
+    <%unless @current_user.tags.empty? %>
+        <h3 class="inline">followed tags:</h3>
+        <% @current_user.tags.each do |tag| %>
+            <div class="tag">
+                <%= tag.name %>
+            </div>
+        <% end %>
+        <br>
+        </br>
+        <div class="anecdotes">
+            <% @current_user.tags.each do |tag| %>
+                <% tag.anecdotes.each do |anecdote|  %>
+                    <div class="anecdote">
+                        <h3><%= anecdote.title %></h3>
+                        <p>"<%= anecdote.content %>"</p>
+                        <p class="tags">
+                            <% anecdote.tags.each do |tag| %>
+                                <div class="tag">
+                                    <%= tag.name %>
+                                </div>
+                            <% end %>
+                        </p>
+                    </div>
+                <% end %>
+            <% end %>
+        </div>
+    <% end %>
+    <% if @current_user.tags.empty? %>
+        <p>you are not following any tags, please follow some <%= link_to 'tags', edit_user_path(@current_user) %> to populate your feed.</p>
+    <% end %>
 <% end %>
+

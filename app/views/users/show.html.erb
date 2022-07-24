@@ -1,0 +1,7 @@
+<% @current_user.tags.each do |tag| %>
+    <div class='tag'>
+        <%= tag.name %>
+    </div>
+<% end %>
+
+<%= link_to 'edit profile', edit_user_path %>

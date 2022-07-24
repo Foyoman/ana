@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def show
+  end
+
   def new
     @user = User.new
   end
@@ -17,6 +20,20 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @tags = Tag.all
+  end
+
+  def update
+    @current_user.tags.delete_all
+    tag_ids = params[:user][:tag_ids].reject(&:empty?)
+    tag_ids.map(&:to_i).each do |tag_id|
+      tag = Tag.find tag_id
+      @current_user.tags << tag
+    end
+    redirect_to root_path
   end
 
   private
