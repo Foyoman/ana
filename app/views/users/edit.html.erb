@@ -1,15 +1,9 @@
 <%= form_for @current_user do |f| %>
 
     <h2 class="centered">tags</h2>
+    <p class ="centered">follow/unfollow tags to customise your feed</p>
     <div class="tags-checks">
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, { hide_label: true }) do |b|
-            b.label(:"data-value" => b.value) { b.check_box + b.text }
-            end %>
-    </div>
-
-    <h2 class="centered">following:</h2>
-    <div class="tags-checks">
-        <%= f.collection_check_boxes(:tag_ids, @current_user.tags, :id, :name, { hide_label: true }) do |b|
             b.label(:"data-value" => b.value) { b.check_box + b.text }
             end %>
     </div>

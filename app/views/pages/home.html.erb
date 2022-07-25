@@ -1,19 +1,46 @@
 <h1>welcome<% if @current_user.present? %>,
         <%= @current_user.username %>
+        <%= link_to "-all users", users_path if @current_user.admin? %>
     <% end %>
 </h1>
 
 <% unless @current_user.present? %>
-<p>we all have moments where we need to get something off our chests, and we all have moments where we feel alone in the struggles we go through. ana is a web-app designed to provide a medium for people to express themselves, and to be exposed to anecdotes from other people's lives who may have lived through similar moments</p>
+    <div class="welcome">
+        <p><strong>anecdote</strong> - noun /ˈanɪkdəʊt/ : a short amusing or interesting story about a real incident or person.</p>
 
-<p><%= link_to 'contribute an anecdote', anecdotes_path %> if you have an anecdote you'd like to share to the world. your story may offer wisdom for others to help them overcome their hardships, or you may even help someone feel validated and their emotions rationalised through the acknowledgement that someone else has felt what they have.</p>
+        <p>get something off your chest, express your emotions, share some advice, tell a funny story, or tell us about your pet. anything goes. ana is a web-app designed to provide a medium for people to express themselves, to be exposed to anecdotes from other people's lives and to not feel alone in what we going through.</p>
+        
+        <ul>
+            <li><%= link_to 'share an anecdote', anecdotes_path %> to contribute to this sites' ana and have your story shared with the world.</li>
 
-<p><%= link_to 'generate an ana', anas_path %> if you wish to read up on a collection of anecdotes from a context of your choosing. it can be rough to feel like you're alone in what you're going through, and sometimes it can help to read how others have dealt with similar scenarios.</p>
+            <li><%= link_to 'generate an ana', anas_path %> to combine a selection of anecdotes based on your choosing of contextual <%= link_to 'tags', tags_path %>.</li>
 
-<p>Create an account and <%= link_to 'follow tags' %> to customise your feed.</p>
+            <li><%= link_to 'create an account', new_user_path %> and <%= link_to 'follow tags' %> to customise your feed.</li>
+        </ul>
+        <br>
+    </div>
+    <br>
+
+    <h2>all anecdotes</h2>
+    <div class="anecdotes">
+        <% @anecdotes.each do |anecdote| %>
+            <div class="anecdote">
+                <h3><%= anecdote.title %></h3>
+                <p>"<%= anecdote.content %>"</p>
+                <p class="tags">
+                    <% anecdote.tags.each do |tag| %>
+                        <div class="tag">
+                            <%= tag.name %>
+                        </div>
+                    <% end %>
+                </p>
+            </div>
+        <% end %>
+    </div>
 <% end %>
 
 <% if @current_user.present? %>
+    <h2><%= link_to 'generate your ana for the day', new_ana_path %></h2>
     <h2>your feed</h2>
     <%unless @current_user.tags.empty? %>
         <h3 class="inline">followed tags:</h3>
@@ -25,20 +52,18 @@
         <br>
         </br>
         <div class="anecdotes">
-            <% @current_user.tags.each do |tag| %>
-                <% tag.anecdotes.each do |anecdote|  %>
-                    <div class="anecdote">
-                        <h3><%= anecdote.title %></h3>
-                        <p>"<%= anecdote.content %>"</p>
-                        <p class="tags">
-                            <% anecdote.tags.each do |tag| %>
-                                <div class="tag">
-                                    <%= tag.name %>
-                                </div>
-                            <% end %>
-                        </p>
-                    </div>
-                <% end %>
+            <% @unique_anecdotes.each do |anecdote|  %>
+                <div class="anecdote">
+                    <h3><%= anecdote.title %></h3>
+                    <p>"<%= anecdote.content %>"</p>
+                    <p class="tags">
+                        <% anecdote.tags.each do |tag| %>
+                            <div class="tag">
+                                <%= tag.name %>
+                            </div>
+                        <% end %>
+                    </p>
+                </div>
             <% end %>
         </div>
     <% end %>

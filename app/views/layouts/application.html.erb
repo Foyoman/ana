@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= favicon_link_tag asset_path('a.png') %>
   </head>
 
   <body>
@@ -14,16 +16,15 @@
       <nav>
         <div class="logo">
           <h1>ana</h1>
-          <p class="definition">noun /ˈɑːnə/ : a collection of memorable sayings, or anecdotes.</p>
+          <p class="definition">noun /ˈɑːnə/ : a collection of anecdotes, or memorable sayings.</p>
         </div>
         <div class="links">
           <%= link_to @current_user.username, edit_user_path(@current_user) if @current_user.present? %>
           <%= link_to 'home', root_path %>
-          <%= link_to 'anas', anas_path %>
+          <%= link_to '+ana', new_ana_path %>
           <%= link_to 'anecdotes', anecdotes_path %>
           <%= link_to 'tags', tags_path %>
           <% if @current_user.present? %>
-            <%= link_to "all users", users_path if @current_user.admin? %>
             <%# link_to "Contributions", user_path %>
             <%= link_to "logout", login_path, :method => 'delete' %>
           <% else%>

@@ -33,6 +33,7 @@ class UsersController < ApplicationController
       tag = Tag.find tag_id
       @current_user.tags << tag
     end
+    @current_user.save
     redirect_to root_path
   end
 

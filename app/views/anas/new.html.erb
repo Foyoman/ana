@@ -1,2 +1,14 @@
-<h1>Anas#new</h1>
-<p>Find me in app/views/anas/new.html.erb</p>
+<h1 class='centered'>generate your ana for the day</h1>
+
+<%= form_for @ana do |f| %>
+
+    <h3 class='centered'>select the tags your ana will generate from</h3>
+    <div class="tags-checks">
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, { hide_label: true }) do |b|
+            b.label(:"data-value" => b.value) { b.check_box + b.text }
+            end %>
+    </div>
+
+
+    <%= f.submit 'generate', :class => 'submit' %>
+<% end %>

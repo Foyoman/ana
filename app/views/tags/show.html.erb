@@ -1,3 +1,18 @@
 <h1><%= @tag.name %></h1>
+<p>below are all the anecdotes tagged with this tag</p>
 
-<%= link_to '+follow', :action => :follow, :id => @tag.id %>
+<div class="anecdotes">
+    <% @tag.anecdotes.each do |anecdote| %>
+        <div class="anecdote">
+            <h3><%= anecdote.title %></h3>
+            <p>"<%= anecdote.content %>"</p>
+            <p class="tags">
+                <% anecdote.tags.each do |tag| %>
+                    <div class="tag">
+                        <%= tag.name %>
+                    </div>
+                <% end %>
+            </p>
+        </div>
+    <% end %>
+</div>
