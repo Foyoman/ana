@@ -1,0 +1,18 @@
+<%= form_for @anecdote do |f| %>
+    <div class="title">
+        <%= f.label 'title:' %>
+        <%= f.text_field :title, :class =>  'title-input', :maxlength => 50, :required => true %>
+    </div>
+
+    <%= f.text_area :content, :class => 'content-input', :placeholder => 'start your story...', :maxlength => 1000, :required => true %>
+    
+    <h2>tags</h2>
+    <div class="tags-checks">
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, { hide_label: true }) do |b|
+            b.label(:"data-value" => b.value) { b.check_box + b.text }
+            end %>
+    </div>
+
+
+    <%= f.submit 'contribute', :class => 'submit' %>
+<% end %>

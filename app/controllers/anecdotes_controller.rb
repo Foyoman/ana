@@ -26,6 +26,24 @@ class AnecdotesController < ApplicationController
   end
 
   def edit
+    @anecdote = Anecdote.find params[:id]
+  end
+
+  def update
+    anecdote = Anecdote.find params[:id]
+    anecdote.update anecdote_params
+    tag_ids = params[:anecdote][:tag_ids].reject(&:empty?)
+    tag_ids.map(&:to_i).each do |tag_id|
+      tag = Tag.find tag_id
+      anecdote.tags << tag
+    end
+    redirect_to anecdote
+  end
+
+  def destroy
+    anecdote = Anecdote.find params[:id]
+    anecdote.destroy
+    redirect_to anecdotes_path
   end
 
   private

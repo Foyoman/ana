@@ -1,11 +1,22 @@
-<h1><%= @anecdote.title %></h1>
-<p><%= @anecdote.content %></p>
-<% if @anecdote.tags.empty? %>
-    <p>tag your anecdote</p>
-<% end %>
+<br>
+<div class="anecdote anecdote-show">
+    <h1><%= @anecdote.title %></h1>
+    <p>"<%= @anecdote.content %>"</p>
+    <% if @anecdote.tags.empty? %>
+        <p>tag your anecdote</p>
+    <% end %>
 
-<% @anecdote.tags.each do |tag| %>
-    <div class="tag">
-        <%= tag.name %>
+    <div class="bottom">
+        <div class="tags">
+            <% @anecdote.tags.each do |tag| %>
+                <div class="tag">
+                    <%= tag.name %>
+                </div>
+            <% end %>
+        </div>
+        <div class="controls">
+            <%= link_to 'edit', edit_anecdote_path %>
+            <%= link_to 'delete', @anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %>
+        </div>
     </div>
-<% end %>
+</div>
