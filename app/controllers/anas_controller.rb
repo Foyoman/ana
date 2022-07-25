@@ -1,4 +1,6 @@
 class AnasController < ApplicationController
+  before_action :check_for_login, :only => [:new, :create, :edit]
+
   def index
     @anas = Ana.all
   end

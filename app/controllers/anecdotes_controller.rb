@@ -1,4 +1,6 @@
 class AnecdotesController < ApplicationController
+  before_action :check_for_login, :only => [:new, :create, :edit]
+  
   def index
     @anecdotes = Anecdote.all
   end
