@@ -1,6 +1,6 @@
 <h1><%= @ana.title %></h1>
 
-<div class="ana">    
+<div class="ana ana-show">    
     <div class="ana-title-content">
         <h3>
             <%= @ana.title %>
@@ -11,7 +11,9 @@
                 "<%= content.content %>"
             </p>
         <% end %>
-        <p>sincerely, ana</p>
+        <p>sincerely, 
+        <br>
+        ana</p>
     </div>
     <div class="tags">
         <% @ana.tags.each do |tag| %>

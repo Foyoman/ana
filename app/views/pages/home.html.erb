@@ -24,17 +24,19 @@
     <h2>all anecdotes</h2>
     <div class="anecdotes">
         <% @anecdotes.each do |anecdote| %>
-            <div class="anecdote">
-                <h3><%= anecdote.title %></h3>
-                <p>"<%= anecdote.content %>"</p>
-                <p class="tags">
-                    <% anecdote.tags.each do |tag| %>
-                        <div class="tag">
-                            <%= tag.name %>
-                        </div>
-                    <% end %>
-                </p>
-            </div>
+            <%= link_to anecdote_path(anecdote) do %>
+                <div class="anecdote">
+                    <h3><%= anecdote.title %></h3>
+                    <p>"<%= anecdote.content %>"</p>
+                    <p class="tags">
+                        <% anecdote.tags.each do |tag| %>
+                            <div class="tag">
+                                <%= tag.name %>
+                            </div>
+                        <% end %>
+                    </p>
+                </div>
+            <% end %>
         <% end %>
     </div>
 <% end %>
@@ -53,17 +55,19 @@
         </br>
         <div class="anecdotes">
             <% @unique_anecdotes.each do |anecdote|  %>
-                <div class="anecdote">
-                    <h3><%= anecdote.title %></h3>
-                    <p>"<%= anecdote.content %>"</p>
-                    <p class="tags">
-                        <% anecdote.tags.each do |tag| %>
-                            <div class="tag">
-                                <%= tag.name %>
-                            </div>
-                        <% end %>
-                    </p>
-                </div>
+                <%= link_to anecdote_path(anecdote) do %>
+                    <div class="anecdote">
+                        <h3><%= anecdote.title %></h3>
+                        <p>"<%= anecdote.content %>"</p>
+                        <p class="tags">
+                            <% anecdote.tags.each do |tag| %>
+                                <div class="tag">
+                                    <%= tag.name %>
+                                </div>
+                            <% end %>
+                        </p>
+                    </div>
+                <% end %>
             <% end %>
         </div>
     <% end %>

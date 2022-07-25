@@ -14,9 +14,11 @@
                 </div>
             <% end %>
         </div>
-        <div class="controls">
-            <%= link_to 'edit', edit_anecdote_path %>
-            <%= link_to 'delete', @anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %>
-        </div>
+        <% if @current_user.present? && @current_user.id == @anecdote.user_id or @current_user.admin? %>
+            <div class="controls">
+                <%= link_to 'edit', edit_anecdote_path %>
+                <%= link_to 'delete', @anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %>
+            </div>
+        <% end %>
     </div>
 </div>
