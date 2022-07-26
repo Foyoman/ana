@@ -15,10 +15,6 @@
         <div class="anecdote <%= @theme %>">
             <h3><%= anecdote.title %></h3>
             <p>"<%= anecdote.content %>"</p>
-            <p><%= anecdote.get_upvotes.size %></p>
-            <%= link_to "^", like_anecdote_path(anecdote), method: :put %>
-            <p>Downvotes <%= pluralize(number_to_human(anecdote.get_downvotes.size), 'Downvote') %></p>
-            <%= link_to "Downvote", dislike_anecdote_path(anecdote), method: :put %>
             <div class="bottom">
                 <div class="tags">
                     <% anecdote.tags.each do |tag| %>

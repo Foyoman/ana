@@ -53,6 +53,11 @@ t31 = Tag.create :name => 'alcoholism'
 t32 = Tag.create :name => 'loneliness'
 t33 = Tag.create :name => 'morbid'
 t34 = Tag.create :name => 'death'
+t35 = Tag.create :name => 'french'
+t36 = Tag.create :name => 'spanish'
+t37 = Tag.create :name => 'loss'
+t38 = Tag.create :name => 'fear'
+t39 = Tag.create :name => 'philosophy'
 
 puts "#{ Tag.count } tags"
 
@@ -102,7 +107,34 @@ d13 = Anecdote.create :title => 'Being alone without being loneley', :content =>
 d13.tags << t32 << t21 << t20
 
 d14 = Anecdote.create :title => 'Death', :content => %(There was one moment in my life where I really truly believed I was dead, and in the afterlife. For me the afterlife was a point in time, frozen, and lasting for eternity. It scared me, but I was ready to accept it. Maybe because at that point, death, the afterlife, and that moment stuck in time was all that existed in my world - that it was decided, that it was my fate, and I could do nothing but accept it.)
-d14.tags << t33 << t34
+d14.tags << t33 << t34 << t38
+
+d15 = Anecdote.create :title => 'TIFI', :content => %(First I couldn't fall asleep until very late the night before. I slept through my alarm. Only got 4 hours of sleep. When I got out of bed I realised my phone didn't charge because of my faulty cable. Couldn't have breakfast cause I was running late. Put salt in my coffee instead of sugar. When I left the house I forgot my earphones. I arrived to the train station as my train was leaving. When I got to school I had already talked to several people, including my crush, before I realised I had an exposed booger in my nose, and a piece of lettuce between my two front teeth. I was unpacking my bag when I realised my bottle's lid wasn't screwed on properly, and it soaked everything in my bag. When I was having lunch I spilt soup on my favourite shirt. I went to the bathroom and made a mess on myself and the seat. My teacher called me out and embarrassed me in front of the class for not paying attention. On my way home I forgot my notebook on the train. My phone ran out of batteries as I was leaving the station, so I couldn't tap off. I got fined by a transit officer. I couldn't call my mum to pick me up so I had to walk half an hour to get home. It rained. A car drove through a puddle and splashed muddy water all over me. As I walked through the front door of my house, my dog, as he routinely does, excitedly ran down from upstairs to greet me with all the love and affection he could give. Squealing with excitement, he licked and nuzzled my face for at least 5 minutes. Life is good.)
+d15.tags << t29 << t21 << t6 
+
+d16 = Anecdote.create :title => 'new record!!!', :content => "I finally reached 110wpm on monkeytype today B) while using my trusty mech (mechanical keyboard) of course. I'm so happy, and so SO so SO so... COOL!!! I love my keeb (keyboard) soo much. Sometimes I go to sleep hugging it hehehe. It's so cool :)"
+d16.tags << t28 << t27
+
+d17 = Anecdote.create :title => 'Effectivement, faut que ça sorte.', :content => "Ma maman est partie hier soir. \n
+Mi avril, elle avait 'une petite baisse d'appétit'. Fin avril, cancer détecté. Mai, elle rentre à l’hôpital. Tests, analyses, opérations. En boucle, en boucle, en boucle. Semaine dernière, première session de chimio. Elle ne l'a pas supporté. \n
+Et puis hier soir, elle s'est éteinte. Paisiblement, j'espère. Entourée de sa famille, et d'amour. De tellement d'amour. \n
+Je l'avais vu une fois, depuis mars 2020. Une seule putain de fois. Parce que mes parents sont âgés, parce qu'elle avait un peu peur, parce qu'elle ne voulait pas prendre de risques. \n
+Avril, ils étaient vaccinés, contre-vaccinés, rassurés. Ça déconfinait. On programmait déjà l'occasion de se retrouver enfin tous en famille. \n
+Je l'avais vu une fois, rapidement, en juillet dernier. On s'était fait un petit câlin, rapide et furtif parce que 'attention le covid quand même'. Et quand je l'ai revue, à l’hôpital, elle semblait avoir pris 20 ans, amaigrie, essoufflée, fatiguée. Il y avait de la tristesse et de la peur dans ses yeux. \n
+Tout s'est passé tellement vite. Beaucoup, beaucoup trop vite. \n
+Je suis dévastée. Parce que ma maman était une femme extraordinaire, bourrée d'amour, de tendresse, de force et de courage. Je suis emplie d'une rage immense. Je trouve même pas les mots pour exprimer la cruauté, l'injustice de ces circonstances. Je me sens complètement désemparée, perdue, écrasée sous le poids d'une situation que je n'ai même pas encore commencé à assimiler. \n
+Et le pire, dans tout ça. Le pire. C'est que la seule chose qui pourrait m'apaiser un peu, là, serait de me blottir dans les bras de ma maman."
+d17.tags << t35 << t1 << t37 << t13 << t20 << t34 << t38
+
+d18 = Anecdote.create :title => "Je ne ressens plus d'envies soudaines de me foutre en l'air.", :content => "Ça doit facilement faire deux mois que j'ai pas eu de pensés suicidaires, j'ai trouvé quelques CDD et finalement un CDI où je suis payé à presque rien faire (je suis pas quelqu'un de physique), je suis dans une équipe géniale et mes client-e-s sont vraiment très agréables. \n
+J'ai passé deux années de merde, j'ai du quitter un emploi à cause d'une grosse rechûte dépressive et la pandémie n'a rien arrangé. Maintenant j'ai du temps, de l'argent et un peu de stabilité dans ma vie mais il manque quelque chose quand même et je sais pas ce que c'est... \n
+Je sais pas pourquoi je poste ça, probablement l'envie de partager mon bien-être actuel ou tout simplement ventiler un peu. En tout cas merci de m'avoir lu, bonne soirée/journée !"
+d18.tags << t35 << t21
+
+d19 = Anecdote.create :title => "La muerte, el miedo y lo infinito.", :content => %(Ayer estuve reflexionando sobre la existencia del ser humano y los miedos, quise ir un poco más allá de la ya muy vista reflexión de que todos los miedos vienen de una manera u otra del miedo primitivo a la muerte y con esta reflexión me vienen dudas; ¿es posible que una persona no tenga nada de miedo a la muerte? incluso en el caso de que una persona se suicide, ¿es posible que esa persona no sienta miedo en la caída o justo antes de apretar un gatillo? personalmente creo que no, creo que aunque sea por un segundo esas personas pasan miedo. Esto me recuerda a una frase de Secretariat (personaje de BH) "Antes de saltar, ¿por qué no vi la vista en medio de la caída?" reflejando el miedo que tuvo en medio de la caída cuando se tiró por un puente. \n
+Y tras estas preguntas que me planteé me di cuenta de algo que nunca había pensado; \n
+Sí, la muerte da miedo, pero alguna vez os habéis parado a pensar el miedo que da no poder morir nunca? estar ahí para siempre? creo que a los humanos les da miedo cualquier para siempre, da igual si es un descanso para siempre o una vida para siempre pero ese término, un término infinito, se escapa de nuestras manos porque no somos infinitos y pensar en que en algún momento estaremos viviendo un infinito, aunque puede que no seamos conscientes de ello, es aterrador.)
+d19.tags << t36 << t38 << t34 << t39
 
 puts "#{ Anecdote.count } anecdotes"
 
@@ -113,11 +145,11 @@ puts "#{ Anecdote.count } anecdotes"
 Theme.destroy_all
 
 f1 = Theme.create :name => 'default'
-f2 = Theme.create :name => 'superuser'
+f2 = Theme.create :name => 'drowning'
 f3 = Theme.create :name => 'magic'
 f4 = Theme.create :name => 'nord'
 f5 = Theme.create :name => 'rosepine'
-f6 = Theme.create :name => 'eighties'
+f6 = Theme.create :name => 'olivia'
 f7 = Theme.create :name => 'vscode'
 f8 = Theme.create :name => 'midnight'
 f9 = Theme.create :name => 'bliss'

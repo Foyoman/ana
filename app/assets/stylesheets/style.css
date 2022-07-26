@@ -335,12 +335,12 @@ input[type="checkbox"]:checked + label {
 .tags-checks {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     width: 50%;
     margin: 0 auto;
-    margin-bottom: 2em;
+    padding-bottom: 2em;
+    border-bottom: 1px solid white;
 }
 
 .tags-checks > label {
@@ -420,13 +420,13 @@ input[type="radio"] {
     border: 1px solid white;
 }
 
-.superuser {
-    border: 2px solid #43FFAF;
+.drowning {
+    border: 2px solid #4a6fb5;
 }
 
-.superuser, .superuser > h3 {
-    color: #43FFAF;
-    background: #262A33;
+.drowning, .drowning > h3 {
+    color: #4a6fb5;
+    background: #191826;
 }
 
 .magic {
@@ -456,13 +456,13 @@ input[type="radio"] {
     background: #1f1d27;
 }
 
-.eighties {
-    border: 2px solid #FCA6D1;
+.olivia {
+    border: 2px solid #deaf9d;
 }
 
-.eighties, .eighties > h3 {
-    color: #FCA6D1;
-    background: #1B1D36;
+.olivia, .olivia > h3 {
+    color: #deaf9d;
+    background: #1c1b1d;
 }
 
 .vscode {

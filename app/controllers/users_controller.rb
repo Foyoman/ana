@@ -28,7 +28,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    # raise "hell"
     @current_user.tags.delete_all
     tag_ids = params[:user][:tag_ids].reject(&:empty?)
     tag_ids.map(&:to_i).each do |tag_id|
