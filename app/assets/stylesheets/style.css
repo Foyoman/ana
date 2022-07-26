@@ -303,6 +303,7 @@ input {
     width: 100%;
     height: 2em;
     font-size: large;
+    border-top: 0;
 }
 
 .sign-up, .log, .submit {
@@ -339,8 +340,7 @@ input[type="checkbox"]:checked + label {
     justify-content: center;
     width: 50%;
     margin: 0 auto;
-    padding-bottom: 2em;
-    border-bottom: 1px solid white;
+    padding-bottom: 1em;
 }
 
 .tags-checks > label {
@@ -393,6 +393,7 @@ color: black;
 /* themes */
 
 .themes {
+    border-top: 1px solid white;
     max-width: 60%;
     margin: 0 auto;
 }
