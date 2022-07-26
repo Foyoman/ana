@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :anas
-  resources :anecdotes
+  resources :anecdotes do
+    member do
+      put "like", to: "anecdotes#upvote"
+      put "dislike", to: "anecdotes#downvote"
+    end
+  end
   resources :tags, :except => [:edit]
 
   get '/tags' => 'tags#follow'

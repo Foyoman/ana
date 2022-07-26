@@ -1,5 +1,5 @@
 class AnecdotesController < ApplicationController
-  before_action :check_for_login, :only => [:new, :create, :edit]
+  before_action :check_for_login, :only => [:new, :create, :edit, :upvote, :downvote]
   
   def index
     anecdotes = Anecdote.all
@@ -44,6 +44,18 @@ class AnecdotesController < ApplicationController
   def destroy
     anecdote = Anecdote.find params[:id]
     anecdote.destroy
+    redirect_to anecdotes_path
+  end
+
+  def upvote
+    anecdote = Anecdote.find params[:id]
+    anecdote.liked_by @current_user
+    redirect_to anecdotes_path
+  end
+
+  def downvote
+    anecdote = Anecdote.find params[:id]
+    anecdote.downvote_from @current_user
     redirect_to anecdotes_path
   end
 
