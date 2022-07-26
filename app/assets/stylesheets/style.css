@@ -117,10 +117,14 @@ a {
 
 .anecdote {
     transition: all 0.2s;
-    padding: 0 1em;
+    padding: 0 1em 0.7em 1em;
     max-width: 100%;
     border: 1px solid white;
     border-radius: 0.5em;
+}
+
+.anecdote h3 {
+    margin-top: 0.6em;
 }
 
 .anecdote-show {

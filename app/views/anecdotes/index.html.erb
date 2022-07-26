@@ -4,18 +4,26 @@
 
 <div class="anecdotes">
     <% @anecdotes.each do |anecdote| %>
-        <%= link_to anecdote_path(anecdote) do %>
-            <div class="anecdote">
-                <h3><%= anecdote.title %></h3>
-                <p>"<%= anecdote.content %>"</p>
-                <p class="tags">
+        <div class="anecdote">
+            <h3><%= anecdote.title %></h3>
+            <p>"<%= anecdote.content %>"</p>
+            <div class="bottom">
+                <div class="tags">
                     <% anecdote.tags.each do |tag| %>
                         <div class="tag">
                             <%= tag.name %>
                         </div>
                     <% end %>
-                </p>
+                </div>
+                <% if @current_user.present? %>
+                    <% if @current_user.id == anecdote.user_id or @current_user.admin? %>
+                        <div class="controls">
+                            <%= link_to 'edit', edit_anecdote_path(anecdote) %>
+                            <%= link_to 'delete', anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %>
+                        </div>
+                    <% end %>
+                <% end %>
             </div>
-        <% end %>
+        </div>
     <% end %>
 </div>
