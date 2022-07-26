@@ -24,12 +24,12 @@
     <h2>all anecdotes</h2>
     <div class="anecdotes">
         <% @anecdotes.each do |anecdote| %>
+            <% @theme = 'default' %>
             <% if anecdote.user_id.present? %>
                 <% anecdote_user = User.find anecdote.user_id %>
                 <% if anecdote_user.theme.present? 
                     theme = anecdote_user.theme
                     @theme = theme.name
-                    else @theme = 'default'
                 end %>
             <% end %>
             <div class="anecdote <%= @theme %>">
@@ -71,12 +71,12 @@
         </br>
         <div class="anecdotes">
             <% @unique_anecdotes.each do |anecdote|  %>
+                <% @theme = 'default' %>
                 <% if anecdote.user_id.present? %>
                     <% anecdote_user = User.find anecdote.user_id %>
                     <% if anecdote_user.theme.present? 
                         theme = anecdote_user.theme
                         @theme = theme.name
-                        else @theme = 'default'
                     end %>
                 <% end %>
                 <div class="anecdote <%= @theme %>">
@@ -93,8 +93,8 @@
                         <% if @current_user.present? %>
                             <% if @current_user.id == anecdote.user_id or @current_user.admin? %>
                                 <div class="controls">
-                                    <%= link_to 'edit', edit_anecdote_path(anecdote) %>
-                                    <%= link_to 'delete', anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %>
+                                    <div class="edit"><%= link_to 'edit', edit_anecdote_path(anecdote) %></div>
+                                    <div class="delete"><%= link_to 'delete', anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %></div>
                                 </div>
                             <% end %>
                         <% end %>

@@ -4,8 +4,6 @@ class AnecdotesController < ApplicationController
   def index
     anecdotes = Anecdote.all
     @anecdotes = anecdotes.sort.reverse
-    # anecdote_user = User.find @anecdote.user_id
-    # anecdote_user.theme
   end
 
   def show

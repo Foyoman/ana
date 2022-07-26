@@ -153,6 +153,51 @@ a {
     justify-content: space-between;
 }
 
+.controls {
+    display: flex;
+    box-shadow: 0px 0px 0px black;
+    font-size: small;
+}
+
+.edit {
+    transition: all 0.2s;
+    display: inline-flex;
+    border: 1px solid white;
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    border-right: 0;
+    padding: 0 0.2em;
+}
+
+.delete {
+    transition: all 0.2s;
+    display: inline-flex;
+    border: 1px solid white;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    border-left: 0.3px;
+    padding: 0 0.2em;
+}
+
+.edit a, .delete a {
+    color: white;
+}
+
+.edit:hover, .delete:hover {
+    background-color: black;
+}
+
+/* .controls {
+    border: 1px solid white;
+    border-radius: 0.5em;
+    padding: 0 0.2em;
+    background-color: white;
+}
+
+.controls a {
+    color: black;
+} */
+
 .tags {
     margin: 0;
 }
@@ -349,28 +394,40 @@ color: black;
     border: 1px solid white;
 }
 
-.miami {
-    color: #05dfd7;
-    background: #f35588;
-    border: 2px solid #05dfd7;
+.superuser {
+    border: 2px solid #43FFAF;
 }
 
-.vaporwave {
-    color: #e368da;
-    background: #a4a7ea;
-    border: 2px solid #e368da;
+.superuser, .superuser > h3 {
+    color: #43FFAF;
+    background: #262A33;
 }
 
-.strawberry {
-    color: #fcfcf8;
-    background: #f37f83;
-    border: 2px solid #fcfcf8;
+.magic {
+    border: 2px solid #a288d9;
 }
 
-.honey {
-    color: #fff546;
-    background: #f2aa00;
-    border: 2px solid #fff546;
+.magic, .magic > h3, .magic > p {
+    color: #a288d9;
+    background: #091f2c;
+}
+
+.nord {
+    border: 2px solid #617b94;
+}
+
+.nord, .nord > h3 {
+    color: #617b94;
+    background: #242933;
+}
+
+.rosepine {
+    border: 2px solid #e0def4;
+}
+
+.rosepine, .rosepine > h3 {
+    color: #e0def4;
+    background: #1f1d27;
 }
 
 .eighties {
@@ -379,28 +436,41 @@ color: black;
     border: 2px solid #FCA6D1;
 }
 
-.fire {
-    color: #ffffff;
-    background: linear-gradient(90deg, #b31313, #ff9000, #fdda16);
-    border: 2px solid #ffffff;
+.eighties, .eighties > h3 {
+    border: 2px solid #FCA6D1;
 }
 
-.aurora {
-    color: #ffffff;
-    background: linear-gradient(90deg, #002c39, #015061, #007a7f, #00e980, #00ffbb);
-    border: 2px solid #ffffff;
+.vscode {
+    border: 2px solid #007acc;
 }
 
-.trance {
-    color: #ffffff;
-    background: linear-gradient(90deg, #263983, #c24e84);
-    border: 2px solid #ffffff;
+.vscode, .vscode > h3 {
+    color: #007acc;
+    background: #1E1E1E;
 }
 
-.pride {
-    color: #ffffff;
-    background: linear-gradient(90deg, #0043ff, #1bdbdb, #27c214, #e0e019, #e01313);
-    border: 2px solid #ffffff;
+.midnight {
+    border: 2px solid #9fadc6;
+}
+
+.midnight, .midnight > h3, .midnight > p {
+    color: #9fadc6;
+    background: #0b0e13;
+}
+
+.bliss {
+    color: #665957;
+    background: #262727;
+    border: 2px solid #665957;
+}
+
+.dots {
+    border: 2px solid #7f88ab;
+}
+
+.dots, .dots > h3, .dots > p {
+    color: #7f88ab;
+    background: #121520;
 }
 
 @media only screen and (max-width: 785px) {
