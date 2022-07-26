@@ -11,17 +11,17 @@
         <p>get something off your chest, express your emotions, share some advice, tell a funny story, or tell us about your pet. anything goes. ana is a web-app designed to provide a medium for people to express themselves, to be exposed to anecdotes from other people's lives and to not feel alone in what we going through.</p>
         
         <ul>
+            <li><%= link_to 'create an account', new_user_path %> and <%= link_to 'follow tags' %> to customise your feed.</li>
+
             <li><%= link_to 'share an anecdote', anecdotes_path %> to contribute to this sites' ana and have your story shared with the world.</li>
 
             <li><%= link_to 'generate an ana', new_ana_path %> to combine a selection of anecdotes based on your choosing of contextual <%= link_to 'tags', tags_path %>.</li>
-
-            <li><%= link_to 'create an account', new_user_path %> and <%= link_to 'follow tags' %> to customise your feed.</li>
         </ul>
         <br>
     </div>
     <br>
 
-    <h2>all anecdotes</h2>
+    <h2 class="inline">all anecdotes </h2><p class="inline">sort by: new<p>
     <div class="anecdotes">
         <% @anecdotes.each do |anecdote| %>
             <% @theme = 'default' %>
@@ -68,7 +68,7 @@
             </div>
         <% end %>
         <br>
-        </br>
+        <p>sort by: new<p>
         <div class="anecdotes">
             <% @unique_anecdotes.each do |anecdote|  %>
                 <% @theme = 'default' %>

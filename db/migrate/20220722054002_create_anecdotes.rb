@@ -4,7 +4,6 @@ class CreateAnecdotes < ActiveRecord::Migration[5.2]
       t.text :title
       t.text :content
       t.integer :upvotes, default: 0
-      t.integer :favourites, default: 0
       t.integer :user_id
       t.integer :tag_id
       t.timestamps

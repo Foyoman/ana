@@ -8,16 +8,18 @@
                 end %>
         </div>
 
-        <h2>themes</h2>
-
-        <%# f.label :theme %>
-        <%= f.select :theme, Theme.pluck(:name, :id) %>
-        <%# @themes.each do |theme| %>
-            <%# f.radio_button :theme, Theme.pluck(:name, :id) %>
-        <%# end %>
-        <br>
-        </br>
-
+        <div class="themes">
+            <h2>themes</h2>
+            <p>a personal theme that applies to only your anecdotes</p>
+            <% @themes.each do |theme| %>
+                <label class="theme <%= theme.name %>">
+                    <%= theme.name %>
+                    <%= f.radio_button :theme, theme.name %>
+                </label>
+            <% end %>
+            <br>
+            </br>
+        </div>
         <%= f.submit 'save', :class => 'submit' %>
         
 

@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       @current_user.tags << tag
     end
 
-    theme = Theme.find params[:user][:theme]
+    theme = Theme.find_by_name params[:user][:theme]
     @current_user.theme = theme
 
     @current_user.save
@@ -45,6 +45,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :password, :password_confirmation, :theme)
   end
 end

@@ -21,26 +21,25 @@ function myFunction() {
 }
 
 $(document).ready(function() {
-
-    // $('.tags-checks > label').click(function() {
-    //     $(this).addClass('checked');
-    //     console.log('hello')
-    // });
     
     $('.tags-checks > label').mouseup(function() {
         if ($(this).hasClass('checked')) {
             $(this).removeClass('checked');
-            console.log('hello')
         } else {
-        $(this).addClass('checked');
-        console.log('hi');
+            $(this).addClass('checked');
         }
     });
 
     $('input[checked="checked"]').parent().addClass("checked")
 
-});
+    $('.theme').mouseup(function() {
+        if ($(this).hasClass('opaque')) {
+            $(this).removeClass('opaque');
+            $('.theme').removeClass('opaque');
+        } else {
+            $('.theme').removeClass('opaque');
+            $(this).addClass('opaque');
+        }
+    });
 
-// $('.tags-checks > label').click(function() {
-//     $(this).addClass('checked');
-// });
+});

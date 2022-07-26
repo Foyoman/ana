@@ -44,6 +44,10 @@ a {
     text-decoration: none;
 }
 
+.inline {
+    display: inline;
+}
+
 .logo {
     margin: 0;
     padding: 0;
@@ -388,6 +392,28 @@ color: black;
 
 /* themes */
 
+.themes {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.theme {
+    transition: all 0.1s;
+    display: inline-flex;
+    border-radius: 0.3em;
+    padding: 0.2em 0.4em;
+    margin: 0.2em;
+    opacity: 0.4;
+}
+
+.theme:hover, .theme:active, .opaque {
+    opacity: 1;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
 .default {
     color: white;
     background: black;
@@ -431,13 +457,12 @@ color: black;
 }
 
 .eighties {
-    color: #FCA6D1;
-    background: #1B1D36;
     border: 2px solid #FCA6D1;
 }
 
 .eighties, .eighties > h3 {
-    border: 2px solid #FCA6D1;
+    color: #FCA6D1;
+    background: #1B1D36;
 }
 
 .vscode {

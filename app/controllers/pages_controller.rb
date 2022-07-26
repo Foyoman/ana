@@ -10,6 +10,7 @@ class PagesController < ApplicationController
           end
         end
       end
-    # @unique_anecdotes = unique_anecdotes[0].sort.reverse
+    @unique_anecdotes.flatten!
+    @unique_anecdotes = @unique_anecdotes.sort.reverse
   end
 end
