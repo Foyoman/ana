@@ -2,7 +2,10 @@ class AnecdotesController < ApplicationController
   before_action :check_for_login, :only => [:new, :create, :edit]
   
   def index
-    @anecdotes = Anecdote.all
+    anecdotes = Anecdote.all
+    @anecdotes = anecdotes.sort.reverse
+    # anecdote_user = User.find @anecdote.user_id
+    # anecdote_user.theme
   end
 
   def show
@@ -22,7 +25,7 @@ class AnecdotesController < ApplicationController
       tag = Tag.find tag_id
       anecdote.tags << tag
     end
-    redirect_to anecdote
+    redirect_to anecdotes_path
   end
 
   def edit

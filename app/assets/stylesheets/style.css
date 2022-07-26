@@ -158,9 +158,9 @@ a {
 }
 
 .tag, .tags-checks > label {
+    border: 1px solid white;
     transition: all 0.1s;
     display: inline-flex;
-    border: 1px solid white;
     border-radius: 0.3em;
     padding: 0.2em;
     margin: 0.2em;
@@ -339,6 +339,68 @@ display: block; /* Make it into a block element to fill the whole list */
 #myUL li a:hover:not(.header) {
 background-color: white; /* Add a hover effect to all links, except for headers */
 color: black;
+}
+
+/* themes */
+
+.default {
+    color: white;
+    background: black;
+    border: 1px solid white;
+}
+
+.miami {
+    color: #05dfd7;
+    background: #f35588;
+    border: 2px solid #05dfd7;
+}
+
+.vaporwave {
+    color: #e368da;
+    background: #a4a7ea;
+    border: 2px solid #e368da;
+}
+
+.strawberry {
+    color: #fcfcf8;
+    background: #f37f83;
+    border: 2px solid #fcfcf8;
+}
+
+.honey {
+    color: #fff546;
+    background: #f2aa00;
+    border: 2px solid #fff546;
+}
+
+.eighties {
+    color: #FCA6D1;
+    background: #1B1D36;
+    border: 2px solid #FCA6D1;
+}
+
+.fire {
+    color: #ffffff;
+    background: linear-gradient(90deg, #b31313, #ff9000, #fdda16);
+    border: 2px solid #ffffff;
+}
+
+.aurora {
+    color: #ffffff;
+    background: linear-gradient(90deg, #002c39, #015061, #007a7f, #00e980, #00ffbb);
+    border: 2px solid #ffffff;
+}
+
+.trance {
+    color: #ffffff;
+    background: linear-gradient(90deg, #263983, #c24e84);
+    border: 2px solid #ffffff;
+}
+
+.pride {
+    color: #ffffff;
+    background: linear-gradient(90deg, #0043ff, #1bdbdb, #27c214, #e0e019, #e01313);
+    border: 2px solid #ffffff;
 }
 
 @media only screen and (max-width: 785px) {

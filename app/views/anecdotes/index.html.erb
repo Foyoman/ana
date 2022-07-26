@@ -4,7 +4,15 @@
 
 <div class="anecdotes">
     <% @anecdotes.each do |anecdote| %>
-        <div class="anecdote">
+        <% if anecdote.user_id.present? %>
+            <% anecdote_user = User.find anecdote.user_id %>
+            <% if anecdote_user.theme.present? 
+                theme = anecdote_user.theme
+                @theme = theme.name
+                else @theme = 'default'
+            end %>
+        <% end %>
+        <div class="anecdote <%= @theme %>">
             <h3><%= anecdote.title %></h3>
             <p>"<%= anecdote.content %>"</p>
             <div class="bottom">

@@ -24,15 +24,21 @@ class UsersController < ApplicationController
 
   def edit
     @tags = Tag.all
+    @themes = Theme.all
   end
 
   def update
+    # raise "hell"
     @current_user.tags.delete_all
     tag_ids = params[:user][:tag_ids].reject(&:empty?)
     tag_ids.map(&:to_i).each do |tag_id|
       tag = Tag.find tag_id
       @current_user.tags << tag
     end
+
+    theme = Theme.find params[:user][:theme]
+    @current_user.theme = theme
+
     @current_user.save
     redirect_to root_path
   end

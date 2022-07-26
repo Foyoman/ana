@@ -3,6 +3,9 @@
 User.destroy_all
 u1 = User.create :username => 'Foyoman', :password => 'chicken', :admin => true
 u2 = User.create :username => 'egg', :password => 'chicken'
+u3 = User.create :username => 'hotdogs', :password => 'chicken'
+u4 = User.create :username => 'drumstick', :password => 'chicken'
+u5 = User.create :username => 'kfc', :password => 'chicken'
 puts "#{ User.count } users"
 
 # End users #
@@ -32,6 +35,7 @@ t18 = Tag.create :name => 'procrastination'
 t19 = Tag.create :name => 'school'
 t20 = Tag.create :name => 'emotions'
 t21 = Tag.create :name => 'gratitude'
+
 puts "#{ Tag.count } tags"
 
 # End tags #
@@ -90,3 +94,21 @@ a2.save
 puts "#{ Ana.count } anas"
 
 # End anas #
+
+# Themes #
+
+Theme.destroy_all
+
+f1 = Theme.create :name => 'default'
+f2 = Theme.create :name => 'miami'
+f3 = Theme.create :name => 'vaporwave'
+f4 = Theme.create :name => 'strawberry'
+f5 = Theme.create :name => 'honey'
+f6 = Theme.create :name => 'eighties'
+f7 = Theme.create :name => 'fire'
+f8 = Theme.create :name => 'aurora'
+f9 = Theme.create :name => 'trance'
+f10 = Theme.create :name => 'pride'
+puts "#{ Theme.count } themes"
+
+# End themes #

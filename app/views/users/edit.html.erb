@@ -1,12 +1,27 @@
 <%= form_for @current_user do |f| %>
+    <div class="centered">
+        <h2>tags</h2>
+        <p>follow/unfollow tags to customise your feed</p>
+        <div class="tags-checks">
+            <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, { hide_label: true }) do |b|
+                b.label(:"data-value" => b.value) { b.check_box + b.text }
+                end %>
+        </div>
 
-    <h2 class="centered">tags</h2>
-    <p class ="centered">follow/unfollow tags to customise your feed</p>
-    <div class="tags-checks">
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, { hide_label: true }) do |b|
-            b.label(:"data-value" => b.value) { b.check_box + b.text }
-            end %>
+        <h2>themes</h2>
+
+        <%# f.label :theme %>
+        <%= f.select :theme, Theme.pluck(:name, :id) %>
+        <%# @themes.each do |theme| %>
+            <%# f.radio_button :theme, Theme.pluck(:name, :id) %>
+        <%# end %>
+        <br>
+        </br>
+
+        <%= f.submit 'save', :class => 'submit' %>
+        
+
+        
+
     </div>
-
-    <%= f.submit 'save', :class => 'submit' %>
 <% end %>
