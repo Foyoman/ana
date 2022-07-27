@@ -13,7 +13,7 @@
             <p>a personal theme that applies to only your anecdotes</p>
             <% @themes.each do |theme| %>
                 <label class="theme <%= theme.name %>">
-                    <%= theme.name %>
+                    <p><%= theme.name %></p>
                     <%= f.radio_button :theme, theme.name %>
                 </label>
             <% end %>

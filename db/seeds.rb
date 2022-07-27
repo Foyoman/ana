@@ -150,10 +150,12 @@ f3 = Theme.create :name => 'magic'
 f4 = Theme.create :name => 'nord'
 f5 = Theme.create :name => 'rosepine'
 f6 = Theme.create :name => 'olivia'
-f7 = Theme.create :name => 'vscode'
+f7 = Theme.create :name => 'voc'
 f8 = Theme.create :name => 'midnight'
 f9 = Theme.create :name => 'bliss'
 f10 = Theme.create :name => 'dots'
+f11 = Theme.create :name => 'edirp'
+f12 = Theme.create :name => 'snart'
 puts "#{ Theme.count } themes"
 
 # End themes #

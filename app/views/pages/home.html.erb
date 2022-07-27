@@ -4,9 +4,10 @@
     <% end %>
 </h1>
 
+<p><strong>anecdote</strong> - noun /ˈanɪkdəʊt/ : a short amusing or interesting story about a real incident or person.</p>
+
 <% unless @current_user.present? %>
     <div class="border-bottom">
-        <p><strong>anecdote</strong> - noun /ˈanɪkdəʊt/ : a short amusing or interesting story about a real incident or person.</p>
 
         <p>get something off your chest, express your emotions, share some advice, tell a funny story, or tell us about your pet. anything goes. ana is a web-app designed to provide a medium for people to express themselves, to be exposed to anecdotes from other people's lives and to not feel alone in what we going through.</p>
         
@@ -43,7 +44,7 @@
                 <div class="bottom">
                     <div class="tags">
                         <% anecdote.tags.each do |tag| %>
-                            <div class="tag">
+                            <div class="tag zero-six-opacity">
                                 <%= tag.name %>
                             </div>
                         <% end %>
@@ -91,7 +92,7 @@
                     <div class="bottom">
                         <div class="tags">
                             <% anecdote.tags.each do |tag| %>
-                                <div class="tag">
+                                <div class="tag zero-six-opacity">
                                     <%= tag.name %>
                                 </div>
                             <% end %>

@@ -8,13 +8,13 @@
     end %>
 <% end %>
 <div class="anecdote anecdote-show <%= @theme %>">
-    <h1><%= @anecdote.title %></h1>
+    <h1 class="top"><%= @anecdote.title %></h1>
     <p>"<%= @anecdote.content %>"</p>
 
     <div class="bottom">
         <div class="tags">
             <% @anecdote.tags.each do |tag| %>
-                <div class="tag">
+                <div class="tag zero-six-opacity">
                     <%= tag.name %>
                 </div>
             <% end %>

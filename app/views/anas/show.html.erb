@@ -1,10 +1,15 @@
 <h1><%= @ana.title %></h1>
 
-<div class="ana ana-show">    
+<% @theme = 'default' %>
+<% if @ana.user_id.present? %>
+    <% ana_user = User.find @ana.user_id %>
+    <% if ana_user.theme.present? 
+        theme = ana_user.theme
+        @theme = theme.name
+    end %>
+<% end %>
+<div class="ana ana-show <%= @theme %>">    
     <div class="ana-title-content">
-        <h3>
-            <%= @ana.title %>
-        </h3>
         <p>dear <%= @current_user.username if @current_user.present? %>,</p>
         <% @ana.anecdotes.each do |content| %>
             <p>
@@ -17,7 +22,7 @@
     </div>
     <div class="tags">
         <% @ana.tags.each do |tag| %>
-            <div class="tag"><%= tag.name %></div>
+            <div class="tag zero-six-opacity"><%= tag.name %></div>
         <% end %>
     </div>
 </div>

@@ -156,10 +156,6 @@ a {
     text-align: center;
 }
 
-.anecdote > * {
-    color: white;
-}
-
 .bottom {
     display: flex;
     align-items: flex-end;
@@ -287,6 +283,10 @@ a {
     margin: 0;
 }
 
+.zero-six-opacity {
+    opacity: 0.6;
+}
+
 .tag, .tags-checks > label {
     border: 1px solid white;
     transition: all 0.1s;
@@ -397,6 +397,7 @@ input {
 }
 
 .sign-up:hover, .log:hover, .submit:hover, .tag:hover, .tags-checks > label:hover, .tags-checks > label:focus, .checked {
+    opacity: 1;
     background-color: white;
     color: black;
     cursor: pointer;
@@ -505,6 +506,10 @@ input[type="radio"] {
     display: none;
 }
 
+.theme > p {
+    margin: 0;
+}
+
 .default {
     color: white;
     background: black;
@@ -513,80 +518,98 @@ input[type="radio"] {
 
 .drowning {
     border: 2px solid #4a6fb5;
+    background: #191826;
 }
 
-.drowning, .drowning > h2, .drowning > h3 {
+.drowning > p, .drowning > .top {
     color: #4a6fb5;
-    background: #191826;
 }
 
 .magic {
     border: 2px solid #a288d9;
+    background: #091f2c;
 }
 
-.magic, .magic > h1, .magic > h3, .magic > p {
+.magic > p, .magic > .top {
     color: #a288d9;
-    background: #091f2c;
 }
 
 .nord {
     border: 2px solid #617b94;
-}
-
-.nord, .nord > h1, .nord > h3 {
-    color: #617b94;
     background: #242933;
 }
 
 .rosepine {
     border: 2px solid #e0def4;
+    background: #1f1d27;
 }
 
-.rosepine, .rosepine h1 > .rosepine > h3 {
+.rosepine > p, .rosepine > .top {
     color: #e0def4;
-    background: #1f1d27;
 }
 
 .olivia {
     border: 2px solid #deaf9d;
-}
-
-.olivia, .olivia >h1, .olivia > h3 {
-    color: #deaf9d;
     background: #1c1b1d;
 }
 
-.vscode {
-    border: 2px solid #007acc;
+.olivia > p, .olivia > .top {
+    color: #deaf9d;
 }
 
-.vscode, .vscode > h1, .vscode > h3 {
-    color: #007acc;
-    background: #1E1E1E;
+.voc {
+    border: 2px solid #e0caac;
+    background: #190618;
+}
+
+.voc > p, .voc > .top {
+    color: #e0caac;
 }
 
 .midnight {
     border: 2px solid #9fadc6;
-}
-
-.midnight, .midnight > h1, .midnight > h3, .midnight > p {
-    color: #9fadc6;
     background: #0b0e13;
 }
 
+.midnight > p, .midnight > .top {
+    color: #9fadc6;
+}
+
 .bliss {
-    color: #665957;
-    background: #262727;
     border: 2px solid #665957;
+    background: #262727;
 }
 
 .dots {
     border: 2px solid #7f88ab;
+    background: #121520;
 }
 
-.dots, .dots > h1, .dots > h3, .dots > p {
+.dots > p, .dots > .top {
     color: #7f88ab;
-    background: #121520;
+}
+
+.edirp {
+    border: 2px solid white;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 192, 203, 0.255) 0%,
+        rgba(255, 0, 0, 0.255) 10%,
+        rgba(255, 153, 0, 0.255) 20%,
+        rgba(208, 222, 33, 0.255) 30%,
+        rgba(79, 220, 74, 0.255) 40%,
+        rgba(63, 218, 216, 0.255) 50%,
+        rgba(47, 201, 226, 0.255) 60%,
+        rgba(28, 127, 238, 0.255) 70%,
+        rgba(95, 21, 242, 0.255) 80%,
+        rgba(186, 12, 248, 0.255) 90%,
+        rgba(251, 7, 217, 0.255) 100%
+    );
+}
+
+.snart {
+    border: 2px solid white;
+    background: linear-gradient(90deg, rgba(91, 205, 250, 0.255) 0%, rgba(245, 169, 184, 0.255) 25%, rgba(255, 255, 255, 0.254) 50%, rgba(245, 169, 184, 0.254) 75%, rgba(91, 205, 250, 0.253) 100%);
 }
 
 @media only screen and (max-width: 785px) {
