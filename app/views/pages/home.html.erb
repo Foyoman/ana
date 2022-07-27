@@ -102,6 +102,9 @@
                 </div>
             <% end %>
         </div>
+        <% if @unique_anecdotes.empty? %>
+            <p>there are currently no anecdotes associated with the tags you follow.</p>
+        <% end %>
     <% end %>
     <% if @current_user.tags.empty? %>
         <p>you are not following any tags, please follow some <%= link_to 'tags', edit_user_path(@current_user) %> to populate your feed.</p>
