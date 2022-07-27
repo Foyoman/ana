@@ -42,4 +42,8 @@ $(document).ready(function() {
         }
     });
 
+    $('.reload').click(function() {
+        location.href = location.href;
+    });
+
 });

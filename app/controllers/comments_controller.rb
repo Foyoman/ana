@@ -33,12 +33,11 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        comment = Comment.find params[:id]
+        anecdote = Anecdote.find params[:id]
+        raise "hell"
+        comment = 
         comment.destroy
-        respond_to do |format|
-          format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-          format.json { head :no_content }
-        end
+        redirect_to anecdote
     end
 
     private

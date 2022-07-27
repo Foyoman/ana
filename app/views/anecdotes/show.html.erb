@@ -34,11 +34,11 @@
 <% if @current_user.present? %>
     <div class="centered">
         <%= form_with(model: [@anecdote, @anecdote.comments.build]) do |f| %>
-        <div>
+        <div class="comment-input-field">
             <%= f.label '+reply' %>
-            <%= f.text_area :content, class: 'comment-input' %>
+            <%= f.text_area :content, class: 'comment-input', :maxlength => 560 %>
         </div>
-        <%= f.submit 'submit', class: 'submit' %>
+        <%= f.submit 'submit', class: 'submit reload' %>
         <% end %>
     </div>
 <% end %>
@@ -48,6 +48,7 @@
         <h2>comments</h2>
 
         <% @comments.each do |comment| %>
+            <% hidden_field(:comment, :id) %>
             <% unless comment.id.nil? %>
                 <% @theme = 'default' %>
                 <% comment_user = User.find comment.user_id %>
@@ -63,7 +64,7 @@
                     </div>
                     <% if @current_user.present? %>
                         <% if @current_user.id == comment.user_id or @current_user.admin? %>
-                            <div class="delete-comment"><%= link_to 'delete', delete_anecdote_comment_path, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                            <div class="delete-comment"><%= link_to 'delete', delete_anecdote_comment_path, method: :delete, data: { confirm: 'confirm' } %></div>
                         <% end %>
                     <% end %>
                 </div>

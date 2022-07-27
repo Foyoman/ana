@@ -194,8 +194,10 @@ a {
 }
 
 .delete-comment {
+    margin: 0;
+    margin-left: auto;
     opacity: 0.6;
-    max-height: 1.4em;
+    max-width: 47px;
     border-left: 1px solid white;
     border-top-left-radius: 0.3em;
     border-bottom-left-radius: 0.3em;
@@ -243,14 +245,19 @@ a {
 }
 
 .comment {
+    overflow-wrap: break-word;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
-    padding: 0 1em 1em 1em;
+    padding: 0 0.8em 0.7em 1em;
     text-align: left;
     border: 1px solid white;
     border-radius: 0.5em;
     margin-bottom: 1em;
+}
+
+.comment p {
+    margin: 0;
 }
 
 .content > h3 {
@@ -261,6 +268,9 @@ a {
     height: 6em;
 }
 
+.comment-input-field textarea {
+    resize: none;
+}
 
 /* .controls {
     border: 1px solid white;
