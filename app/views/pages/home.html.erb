@@ -33,7 +33,12 @@
                 end %>
             <% end %>
             <div class="anecdote <%= @theme %>">
-                <h3><%= anecdote.title %></h3>
+                <div class="top">
+                    <h3><%= anecdote.title %></h3>
+                    <%= link_to anecdote do %>
+                        <%= image_tag "comment.png", :class => 'comment-icon' %>
+                    <% end %>
+                </div>
                 <p>"<%= anecdote.content %>"</p>
                 <div class="bottom">
                     <div class="tags">
@@ -43,14 +48,6 @@
                             </div>
                         <% end %>
                     </div>
-                    <% if @current_user.present? %>
-                        <% if @current_user.id == anecdote.user_id or @current_user.admin? %>
-                            <div class="controls">
-                                <%= link_to 'edit', edit_anecdote_path(anecdote) %>
-                                <%= link_to 'delete', anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %>
-                            </div>
-                        <% end %>
-                    <% end %>
                 </div>
             </div>
         <% end %>
