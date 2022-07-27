@@ -34,6 +34,7 @@ nav {
     padding: 0;
     border-bottom: 1px solid white;
     box-shadow: 10px -1px 0px black, -10px -1px 0px black;
+    z-index: 420;
 }
 
 nav a {
@@ -189,6 +190,22 @@ a {
 
 .edit:hover, .delete:hover {
     background-color: black;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment-icon {
+    transition: all 0.2s;
+    max-width: 30px;
+    opacity: 0.4;
+}
+
+.comment-icon:hover {
+    opacity: 1;
 }
 
 /* .controls {

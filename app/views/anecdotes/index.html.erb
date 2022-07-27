@@ -13,7 +13,12 @@
             end %>
         <% end %>
         <div class="anecdote <%= @theme %>">
-            <h3><%= anecdote.title %></h3>
+            <div class="top">
+                <h3><%= anecdote.title %></h3>
+                <%= link_to anecdote do %>
+                    <%= image_tag "comment.png", :class => 'comment-icon' %>
+                <% end %>
+            </div>
             <p>"<%= anecdote.content %>"</p>
             <div class="bottom">
                 <div class="tags">
