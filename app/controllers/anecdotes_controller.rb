@@ -8,6 +8,7 @@ class AnecdotesController < ApplicationController
 
   def show
     @anecdote = Anecdote.find params[:id]
+    @comments = @anecdote.comments.sort
   end
 
   def new

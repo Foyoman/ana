@@ -1,0 +1,26 @@
+<br>
+<% @comments.each do |comment| %>
+    <% @theme = 'default' %>
+    <% comment_user = User.find comment.user_id %>
+    <% if comment_user.theme.present? 
+        theme = comment_user.theme
+        @theme = theme.name
+    end %>
+    <div class="comment <%= @theme %>">
+        <div class="content">
+            <% comment_user = User.find comment.user_id %>
+            <h3><%= comment_user.username %></h3>
+            "<%= comment.content %>"
+            <% if @current_user.present? %>
+                <% if @current_user.id == comment.user_id or @current_user.admin? %>
+                 
+                <% end %>
+            <% end %>
+        </div>
+    </div>
+    <tr>
+
+        <td><%= link_to 'Destroy', delete_anecdote_comment_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+<% end %>
+

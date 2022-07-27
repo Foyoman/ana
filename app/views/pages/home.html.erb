@@ -5,7 +5,7 @@
 </h1>
 
 <% unless @current_user.present? %>
-    <div class="welcome">
+    <div class="border-bottom">
         <p><strong>anecdote</strong> - noun /ˈanɪkdəʊt/ : a short amusing or interesting story about a real incident or person.</p>
 
         <p>get something off your chest, express your emotions, share some advice, tell a funny story, or tell us about your pet. anything goes. ana is a web-app designed to provide a medium for people to express themselves, to be exposed to anecdotes from other people's lives and to not feel alone in what we going through.</p>
@@ -58,7 +58,11 @@
 <% end %>
 
 <% if @current_user.present? %>
-    <h2><%= link_to 'generate your ana for the day', new_ana_path %></h2>
+    <h2 class="border-bottom"><%= link_to 'generate your ana for the day', new_ana_path %>
+    <br>
+    </br>
+    </h2>
+    
     <h2>your feed</h2>
     <%unless @current_user.tags.empty? %>
         <h3 class="inline">followed tags:</h3>
@@ -80,7 +84,12 @@
                     end %>
                 <% end %>
                 <div class="anecdote <%= @theme %>">
-                    <h3><%= anecdote.title %></h3>
+                    <div class="top">
+                        <h3><%= anecdote.title %></h3>
+                        <%= link_to anecdote do %>
+                            <%= image_tag "comment.png", :class => 'comment-icon' %>
+                        <% end %>
+                    </div>
                     <p>"<%= anecdote.content %>"</p>
                     <div class="bottom">
                         <div class="tags">

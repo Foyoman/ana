@@ -172,3 +172,5 @@ u10.anecdotes << d10 # karlmarx
 puts "Users and anecdotes"
 
 # End #
+
+Comment.destroy_all

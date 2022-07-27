@@ -74,8 +74,12 @@ a {
     gap: 2em;
 }
 
-.welcome {
-    border-bottom: 1px solid white
+.border-top {
+    border-top: 1px solid white;
+}
+
+.border-bottom {
+    border-bottom: 1px solid white;
 }
 
 .tags {
@@ -128,12 +132,16 @@ a {
     border-radius: 0.5em;
 }
 
+.anecdote > p {
+    margin: 0 0 1em 0;
+}
+
 .anecdote h3 {
     margin-top: 0.6em;
 }
 
 .anecdote-show {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.8em;
 }
 
 .anecdote-show:hover {
@@ -160,6 +168,7 @@ a {
 
 .controls {
     display: flex;
+    opacity: 0.6;
     box-shadow: 0px 0px 0px black;
     font-size: small;
 }
@@ -174,7 +183,7 @@ a {
     padding: 0 0.2em;
 }
 
-.delete {
+.delete, .delete-comment {
     transition: all 0.2s;
     display: inline-flex;
     border: 1px solid white;
@@ -184,15 +193,35 @@ a {
     padding: 0 0.2em;
 }
 
-.edit a, .delete a {
+.delete-comment {
+    opacity: 0.6;
+    max-height: 1.4em;
+    border-left: 1px solid white;
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+}
+
+.edit a, .delete a, .delete-comment a {
     color: white;
 }
 
-.edit:hover, .delete:hover {
-    background-color: black;
+.delete-comment a {
+    font-size: small;
+}
+
+.edit:hover, .delete:hover, .delete-comment:hover, .edit a:hover, .delete a:hover, .delete-comment a:hover {
+    opacity: 1;
+    background-color: white;
+    color: black;
+}
+
+.controls:hover {
+    opacity: 1;
 }
 
 .top {
+    margin-top: 0.5em;
+    max-height: 2em;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -207,6 +236,31 @@ a {
 .comment-icon:hover {
     opacity: 1;
 }
+
+.comments {
+    max-width: 80%;
+    margin: 2em auto;
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 1em 1em 1em;
+    text-align: left;
+    border: 1px solid white;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+
+.content > h3 {
+    margin: 0.5em 0;
+}
+
+.comment-input {
+    height: 6em;
+}
+
 
 /* .controls {
     border: 1px solid white;
@@ -253,7 +307,7 @@ a {
     gap: 0.5em;
 }
 
-.content-input {
+.content-input, .comment-input {
     display: block;
     margin: 1em auto;
     transition: all 0.2s;
@@ -372,6 +426,11 @@ label:checked {
     background: brown;
 }
 
+.tag-table {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
 #myInput {
     box-sizing: border-box;
     background-position: 10px 12px; /* Position the search icon */
@@ -384,27 +443,27 @@ label:checked {
 }
 
 #myUL {
-/* Remove default list styling */
-list-style-type: none;
-padding: 0;
-margin: 0;
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 #myUL li a {
-transition: all 0.2s;
-border: 1px solid white; /* Add a border to all links */
-margin-top: -1px; /* Prevent double borders */
-background-color: black; /* Grey background color */
-padding: 12px; /* Add some padding */
-text-decoration: none; /* Remove default text underline */
-font-size: 18px; /* Increase the font-size */
-color: white; /* Add a white text color */
-display: block; /* Make it into a block element to fill the whole list */
+    transition: all 0.2s;
+    border: 1px solid white; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: black; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: white; /* Add a white text color */
+    display: block; /* Make it into a block element to fill the whole list */
 }
 
 #myUL li a:hover:not(.header) {
-background-color: white; /* Add a hover effect to all links, except for headers */
-color: black;
+    background-color: white; /* Add a hover effect to all links, except for headers */
+    color: black;
 }
 
 /* themes */
@@ -446,7 +505,7 @@ input[type="radio"] {
     border: 2px solid #4a6fb5;
 }
 
-.drowning, .drowning > h3 {
+.drowning, .drowning > h2, .drowning > h3 {
     color: #4a6fb5;
     background: #191826;
 }
@@ -455,7 +514,7 @@ input[type="radio"] {
     border: 2px solid #a288d9;
 }
 
-.magic, .magic > h3, .magic > p {
+.magic, .magic > h1, .magic > h3, .magic > p {
     color: #a288d9;
     background: #091f2c;
 }
@@ -464,7 +523,7 @@ input[type="radio"] {
     border: 2px solid #617b94;
 }
 
-.nord, .nord > h3 {
+.nord, .nord > h1, .nord > h3 {
     color: #617b94;
     background: #242933;
 }
@@ -473,7 +532,7 @@ input[type="radio"] {
     border: 2px solid #e0def4;
 }
 
-.rosepine, .rosepine > h3 {
+.rosepine, .rosepine h1 > .rosepine > h3 {
     color: #e0def4;
     background: #1f1d27;
 }
@@ -482,7 +541,7 @@ input[type="radio"] {
     border: 2px solid #deaf9d;
 }
 
-.olivia, .olivia > h3 {
+.olivia, .olivia >h1, .olivia > h3 {
     color: #deaf9d;
     background: #1c1b1d;
 }
@@ -491,7 +550,7 @@ input[type="radio"] {
     border: 2px solid #007acc;
 }
 
-.vscode, .vscode > h3 {
+.vscode, .vscode > h1, .vscode > h3 {
     color: #007acc;
     background: #1E1E1E;
 }
@@ -500,7 +559,7 @@ input[type="radio"] {
     border: 2px solid #9fadc6;
 }
 
-.midnight, .midnight > h3, .midnight > p {
+.midnight, .midnight > h1, .midnight > h3, .midnight > p {
     color: #9fadc6;
     background: #0b0e13;
 }
@@ -515,7 +574,7 @@ input[type="radio"] {
     border: 2px solid #7f88ab;
 }
 
-.dots, .dots > h3, .dots > p {
+.dots, .dots > h1, .dots > h3, .dots > p {
     color: #7f88ab;
     background: #121520;
 }

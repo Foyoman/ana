@@ -1,9 +1,11 @@
-<h1>tags</h1>
+<h1 class="centered">tags</h1>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for tags...">
+<div class="tag-table">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for tags...">
 
-<ul id="myUL">
-    <% @tags.each do |tag| %>
-        <li><%= link_to tag.name, tag %>
-    <% end  %>
-</ul>
+    <ul id="myUL">
+        <% @tags.each do |tag| %>
+            <li><%= link_to tag.name, tag %>
+        <% end  %>
+    </ul>
+</div>

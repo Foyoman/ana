@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def index
-    @tags = Tags.all.order.name
+    @tags = Tag.all.order :name
   end
 
   def show

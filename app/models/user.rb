@@ -5,6 +5,7 @@ class User < ApplicationRecord
     has_many :anas
     has_many :anecdotes
     has_many :tags
+    has_many :comments
 
     belongs_to :theme, :optional => true
 end

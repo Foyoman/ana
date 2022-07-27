@@ -1,10 +1,15 @@
 <br>
-<div class="anecdote anecdote-show">
+<% @theme = 'default' %>
+<% if @anecdote.user_id.present? %>
+    <% anecdote_user = User.find @anecdote.user_id %>
+    <% if anecdote_user.theme.present? 
+        theme = anecdote_user.theme
+        @theme = theme.name
+    end %>
+<% end %>
+<div class="anecdote anecdote-show <%= @theme %>">
     <h1><%= @anecdote.title %></h1>
     <p>"<%= @anecdote.content %>"</p>
-    <% if @anecdote.tags.empty? %>
-        <p>tag your anecdote</p>
-    <% end %>
 
     <div class="bottom">
         <div class="tags">
@@ -14,11 +19,55 @@
                 </div>
             <% end %>
         </div>
-        <% if @current_user.present? && @current_user.id == @anecdote.user_id or @current_user.admin? %>
-            <div class="controls">
-                <%= link_to 'edit', edit_anecdote_path %>
-                <%= link_to 'delete', @anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %>
-            </div>
+        <% if @current_user.present? %>
+            <% if @current_user.id == @anecdote.user_id or @current_user.admin? %>
+                <div class="controls">
+                    <div class="edit"><%= link_to 'edit', edit_anecdote_path(@anecdote) %></div>
+                    <div class="delete"><%= link_to 'delete', @anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %></div>
+                </div>
+            <% end %>
         <% end %>
     </div>
 </div>
+
+<br>
+<% if @current_user.present? %>
+    <div class="centered">
+        <%= form_with(model: [@anecdote, @anecdote.comments.build]) do |f| %>
+        <div>
+            <%= f.label '+reply' %>
+            <%= f.text_area :content, class: 'comment-input' %>
+        </div>
+        <%= f.submit 'submit', class: 'submit' %>
+        <% end %>
+    </div>
+<% end %>
+
+<% unless @comments.size == 1 && @comments.first.content == nil %>
+    <div class="comments centered border-top">
+        <h2>comments</h2>
+
+        <% @comments.each do |comment| %>
+            <% unless comment.id.nil? %>
+                <% @theme = 'default' %>
+                <% comment_user = User.find comment.user_id %>
+                <% if comment_user.theme.present? 
+                    theme = comment_user.theme
+                    @theme = theme.name
+                end %>
+                <div class="comment <%= @theme %>" name="<%= comment.id %>">
+                    <div class="content">
+                        <% comment_user = User.find comment.user_id %>
+                        <h3><%= comment_user.username %></h3>
+                        <p>"<%= comment.content %>"</p>
+                    </div>
+                    <% if @current_user.present? %>
+                        <% if @current_user.id == comment.user_id or @current_user.admin? %>
+                            <div class="delete-comment"><%= link_to 'delete', delete_anecdote_comment_path, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+        <% end %>
+    </div>
+<% end %>
