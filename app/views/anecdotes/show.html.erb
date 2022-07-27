@@ -36,14 +36,14 @@
         <%= form_with(model: [@anecdote, @anecdote.comments.build]) do |f| %>
         <div class="comment-input-field">
             <%= f.label '+reply' %>
-            <%= f.text_area :content, class: 'comment-input', :maxlength => 560 %>
+            <%= f.text_area :content, class: 'comment-input', :required => true, :maxlength => 560 %>
         </div>
-        <%= f.submit 'submit', class: 'submit reload' %>
+        <%= f.submit 'comment', class: 'submit reload', :"data-no-turbolink" => "true" %>
         <% end %>
     </div>
 <% end %>
 
-<% unless @comments.size == 1 && @comments.first.content == nil %>
+<% unless @comments.empty? %>
     <div class="comments centered border-top">
         <h2>comments</h2>
 
@@ -64,7 +64,7 @@
                     </div>
                     <% if @current_user.present? %>
                         <% if @current_user.id == comment.user_id or @current_user.admin? %>
-                            <div class="delete-comment"><%= link_to 'delete', delete_anecdote_comment_path, method: :delete, data: { confirm: 'confirm' } %></div>
+                            <div class="delete-comment"><%= link_to 'delete', anecdote_comment_path(@anecdote.id, comment.id), method: :delete %></div>
                         <% end %>
                     <% end %>
                 </div>

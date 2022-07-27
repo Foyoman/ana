@@ -19,23 +19,21 @@ class CommentsController < ApplicationController
         @comment.user_id = @current_user.id
 
         respond_to do |format|
-            if @comment.save
-                format.html { redirect_to @anecdote }
-            else
-                format.html { render :new }
-            end
+            format.html { redirect_to @anecdote } if @comment.save
+            # else
+            #     format.html { render :new }
+            # end
         end
 
-        redirect_to @anecdote
+        # redirect_to @anecdote
     end
 
     def update
     end
 
     def destroy
-        anecdote = Anecdote.find params[:id]
-        raise "hell"
-        comment = 
+        comment = Comment.find params[:id]
+        anecdote = Anecdote.find comment.anecdote_id
         comment.destroy
         redirect_to anecdote
     end

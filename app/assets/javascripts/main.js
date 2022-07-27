@@ -41,9 +41,9 @@ $(document).ready(function() {
             $(this).addClass('opaque');
         }
     });
-
+    
     $('.reload').click(function() {
-        location.href = location.href;
+        document.location.reload(true);
     });
 
 });

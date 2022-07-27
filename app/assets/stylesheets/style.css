@@ -261,7 +261,7 @@ a {
 }
 
 .comment-input {
-    height: 6em;
+    max-height: 6em;
 }
 
 .comment-input-field textarea {
@@ -420,7 +420,7 @@ input[type="checkbox"]:checked + label {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     padding-bottom: 1em;
 }
