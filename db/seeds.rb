@@ -11,6 +11,7 @@ u7 = User.create :username => 'rooster', :password => 'chicken'
 u8 = User.create :username => 'nugget', :password => 'chicken'
 u9 = User.create :username => 'chicomarx', :password => 'chicken'
 u10 = User.create :username => 'karlmarx', :password => 'chicken'
+u11 = User.create :username => 'edward', :password => 'chicken', :admin => true
 puts "#{ User.count } users"
 
 # End users #
@@ -58,6 +59,7 @@ t36 = Tag.create :name => 'spanish'
 t37 = Tag.create :name => 'loss'
 t38 = Tag.create :name => 'fear'
 t39 = Tag.create :name => 'anger'
+t40 = Tag.create :name => 'sei54'
 
 puts "#{ Tag.count } tags"
 
@@ -151,6 +153,12 @@ d23.tags << t36 << t38
 d24 = Anecdote.create :title => "Le poids psychologique de la recherche de logement", :content => "Devoir étaler ses revenus et ceux de sa famille à chaque putain de random qui loue une piaule, c'est humiliant. Se voir jugé et comparé dans une compétition pour devenir l'heureux élu qui gagnera la chance de passer la moitié de son temps de travail à payer 35m², c'est humiliant. Devoir quémander le droit d'avoir un endroit où vivre en dehors de ton taf, c'est humiliant. Se sentir moins que rien parce que celui en face est propriétaireTM et a droit de vie ou de mort sur toi, tu peux bien dormir dans une cave que c'est pas son problème, c'est putain d'humiliant. Bordel de merde j'en peux plus."
 d24.tags << t35 << t39 << t14 << t25
 
+d25 = Anecdote.create :title => "Thank you Joel and Loden", :content => "Thanks to the both of you for all the help and patience you've given us throughout the course and especially throughout this project week. Learning has never been easier thanks to the both of you. Cheers."
+d25.tags << t40
+
+d26 = Anecdote.create :title => "and thanks to the rest i guess", :content => "Guys guess what? We're officially at the halfway mark!! 6 weeks in and 6 weeks to go! This calls for celebration :winky_face: ;) Thank you guys for being such an amazing class and for making the classroom environment so cozy friendly warm and lovely. I like you all :smiley_face: :). And guess what again? Happy birthday to you, haaappy birthday to youuu, happy birthday deaarr EliASS, happy birthday to youuuuuuuu. Hip hip! HOORAY. Hip hip! HOORAY. Hip Hip! HOORAY."
+d25.tags << t40
+
 puts "#{ Anecdote.count } anecdotes"
 
 # End anecdotes #
@@ -174,9 +182,37 @@ f12 = Theme.create :name => 'snart'
 puts "#{ Theme.count } themes"
 
 # End themes #
+ 
+# Users and themes #
+
+u1.theme = f11
+u1.save
+u2.theme = f2
+u2.save
+u3.theme = f3
+u3.save
+u4.theme = f4
+u4.save
+u5.theme = f5
+u5.save
+u6.theme = f6
+u6.save
+u7.theme = f7
+u7.save
+u8.theme = f8
+u8.save
+u9.theme = f9
+u9.save
+u10.theme = f10
+u10.save
+u11.theme = f12
+u11.save
+puts "Users and themes"
+
+# End #
 
 # Users and anecdotes #
-
+u1.anecdotes << d25
 u2.anecdotes << d2 << d1 << d19 # egg
 u3.anecdotes << d3 << d11 << d20 # hotdogs
 u4.anecdotes << d4 << d12 << d21 # drumstick
@@ -186,6 +222,7 @@ u7.anecdotes << d7 << d15 << d24 # rooster
 u8.anecdotes << d8 << d16 # nugget
 u9.anecdotes << d9 << d17 # chicomarx
 u10.anecdotes << d10 << d18 # karlmarx
+u11.anecdotes << d26
 puts "Users and anecdotes"
 
 # End #
