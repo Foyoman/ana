@@ -36,9 +36,17 @@
             <div class="anecdote <%= @theme %>">
                 <div class="top">
                     <h3><%= anecdote.title %></h3>
-                    <%= link_to anecdote do %>
-                        <%= image_tag "comment.png", :class => 'comment-icon' %>
-                    <% end %>
+                    <div class="hearts-comments">
+                        <div class="hearts">
+                            <p><%= anecdote.get_upvotes.size %></p>
+                            <%= link_to like_anecdote_path(anecdote), method: :put do %>
+                                <%= image_tag "heart.png", alt: "heart", :class => 'icon' %>
+                            <% end %>
+                        </div>
+                        <%= link_to anecdote do %>
+                            <%= image_tag "comment.png", :class => 'icon comment-icon' %>
+                        <% end %>
+                    </div>
                 </div>
                 <p>"<%= anecdote.content %>"</p>
                 <div class="bottom">
@@ -84,9 +92,17 @@
                 <div class="anecdote <%= @theme %>">
                     <div class="top">
                         <h3><%= anecdote.title %></h3>
-                        <%= link_to anecdote do %>
-                            <%= image_tag "comment.png", :class => 'comment-icon' %>
-                        <% end %>
+                        <div class="hearts-comments">
+                            <div class="hearts">
+                                <p><%= anecdote.get_upvotes.size %></p>
+                                <%= link_to like_anecdote_path(anecdote), method: :put do %>
+                                    <%= image_tag "heart.png", alt: "heart", :class => 'icon' %>
+                                <% end %>
+                            </div>
+                            <%= link_to anecdote do %>
+                                <%= image_tag "comment.png", :class => 'icon comment-icon' %>
+                            <% end %>
+                        </div>
                     </div>
                     <p>"<%= anecdote.content %>"</p>
                     <div class="bottom">

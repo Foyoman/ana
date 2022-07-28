@@ -225,15 +225,42 @@ a {
     justify-content: space-between;
 }
 
-.comment-icon {
+.icon {
     transition: all 0.2s;
-    max-width: 30px;
+    max-height: 30px;
+}
+
+.icon:hover, .hearts:hover {
+    opacity: 1;
+}
+
+.hearts {
+    opacity: 0.4;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.hearts > p {
+    padding-bottom: 8px;
+}
+
+.comment-icon {
     opacity: 0.4;
 }
 
-.comment-icon:hover {
-    opacity: 1;
+.hearts-comments {
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+    max-height: 30px;
+    padding: 0px;
 }
+
+/* .hearts-comments > p {
+    opacity: 0.4;
+    padding-bottom: 8px;
+} */
 
 .comments {
     max-width: 80%;

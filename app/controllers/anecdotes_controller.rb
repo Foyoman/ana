@@ -51,6 +51,8 @@ class AnecdotesController < ApplicationController
   def upvote
     anecdote = Anecdote.find params[:id]
     anecdote.liked_by @current_user
+    anecdote.upvotes = anecdote.get_upvotes.size
+    anecdote.save
     redirect_to anecdotes_path
   end
 

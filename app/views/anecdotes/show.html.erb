@@ -33,7 +33,7 @@
 <br>
 <% if @current_user.present? %>
     <div class="centered">
-        <%= form_with(model: [@anecdote, @anecdote.comments.build]) do |f| %>
+        <%= form_with(model: [@anecdote, @anecdote.comments.build], local: true) do |f| %>
         <div class="comment-input-field">
             <%= f.label '+reply' %>
             <%= f.text_area :content, class: 'comment-input', :required => true, :maxlength => 560 %>

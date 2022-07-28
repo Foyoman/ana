@@ -1,0 +1,153 @@
+Date : 2022-07-28 12:12:34
+Directory : /home/donut/Projects/project1
+Total : 95 files,  2011 codes, 394 comments, 476 blanks, all 2881 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Ruby       |         60 |        733 |        224 |        249 |      1,206 |
+| CSS        |          2 |        520 |         33 |        109 |        662 |
+| erb        |         22 |        479 |          5 |         56 |        540 |
+| HTML       |          3 |        182 |          3 |         18 |        203 |
+| JavaScript |          3 |         36 |         20 |          8 |         64 |
+| Gemfile    |          1 |         26 |         18 |         11 |         55 |
+| YAML       |          2 |         17 |         91 |         12 |        120 |
+| Markdown   |          1 |         13 |          0 |         12 |         25 |
+| JSON       |          1 |          5 |          0 |          1 |          6 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                      | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                         |         95 |      2,011 |        394 |        476 |      2,881 |
+| app                                                                                       |         50 |      1,316 |         69 |        245 |      1,630 |
+| app/assets                                                                                |          5 |        556 |         53 |        117 |        726 |
+| app/assets/config                                                                         |          1 |          0 |          3 |          1 |          4 |
+| app/assets/javascripts                                                                    |          2 |         36 |         17 |          7 |         60 |
+| app/assets/stylesheets                                                                    |          2 |        520 |         33 |        109 |        662 |
+| app/controllers                                                                           |          8 |        226 |         10 |         53 |        289 |
+| app/helpers                                                                               |          6 |         12 |          0 |          6 |         18 |
+| app/jobs                                                                                  |          1 |          2 |          0 |          1 |          3 |
+| app/mailers                                                                               |          1 |          4 |          0 |          1 |          5 |
+| app/models                                                                                |          7 |         37 |          1 |         11 |         49 |
+| app/views                                                                                 |         22 |        479 |          5 |         56 |        540 |
+| app/views/anas                                                                            |          4 |         61 |          0 |          8 |         69 |
+| app/views/anecdotes                                                                       |          5 |        138 |          0 |         13 |        151 |
+| app/views/comments                                                                        |          1 |         23 |          0 |          4 |         27 |
+| app/views/layouts                                                                         |          3 |         48 |          2 |          7 |         57 |
+| app/views/pages                                                                           |          1 |        110 |          0 |         11 |        121 |
+| app/views/session                                                                         |          1 |         13 |          0 |          3 |         16 |
+| app/views/tags                                                                            |          3 |         28 |          0 |          4 |         32 |
+| app/views/users                                                                           |          4 |         58 |          3 |          6 |         67 |
+| config                                                                                    |         20 |        132 |        281 |        112 |        525 |
+| config/environments                                                                       |          3 |         59 |         80 |         51 |        190 |
+| config/initializers                                                                       |          9 |          7 |         71 |         28 |        106 |
+| config/locales                                                                            |          1 |          2 |         30 |          2 |         34 |
+| db                                                                                        |         18 |        335 |         22 |         74 |        431 |
+| db/migrate                                                                                |         16 |        131 |          0 |         22 |        153 |
+| public                                                                                    |          3 |        182 |          3 |         18 |        203 |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                  | language   | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /home/donut/Projects/project1/Gemfile                                                     | Gemfile    |         26 |         18 |         11 |         55 |
+| /home/donut/Projects/project1/README.md                                                   | Markdown   |         13 |          0 |         12 |         25 |
+| /home/donut/Projects/project1/app/assets/config/manifest.js                               | JavaScript |          0 |          3 |          1 |          4 |
+| /home/donut/Projects/project1/app/assets/javascripts/application.js                       | JavaScript |          0 |         15 |          0 |         15 |
+| /home/donut/Projects/project1/app/assets/javascripts/main.js                              | JavaScript |         36 |          2 |          7 |         45 |
+| /home/donut/Projects/project1/app/assets/stylesheets/application.css                      | CSS        |          0 |         15 |          1 |         16 |
+| /home/donut/Projects/project1/app/assets/stylesheets/style.css                            | CSS        |        520 |         18 |        108 |        646 |
+| /home/donut/Projects/project1/app/controllers/anas_controller.rb                          | Ruby       |         36 |          0 |         10 |         46 |
+| /home/donut/Projects/project1/app/controllers/anecdotes_controller.rb                     | Ruby       |         58 |          0 |         11 |         69 |
+| /home/donut/Projects/project1/app/controllers/application_controller.rb                   | Ruby       |         13 |          0 |          4 |         17 |
+| /home/donut/Projects/project1/app/controllers/comments_controller.rb                      | Ruby       |         35 |          4 |         12 |         51 |
+| /home/donut/Projects/project1/app/controllers/pages_controller.rb                         | Ruby       |         16 |          0 |          0 |         16 |
+| /home/donut/Projects/project1/app/controllers/session_controller.rb                       | Ruby       |         18 |          6 |          3 |         27 |
+| /home/donut/Projects/project1/app/controllers/tags_controller.rb                          | Ruby       |         10 |          0 |          3 |         13 |
+| /home/donut/Projects/project1/app/controllers/users_controller.rb                         | Ruby       |         40 |          0 |         10 |         50 |
+| /home/donut/Projects/project1/app/helpers/anas_helper.rb                                  | Ruby       |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/helpers/anecdotes_helper.rb                             | Ruby       |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/helpers/application_helper.rb                           | Ruby       |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/helpers/pages_helper.rb                                 | Ruby       |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/helpers/tags_helper.rb                                  | Ruby       |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/helpers/users_helper.rb                                 | Ruby       |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/jobs/application_job.rb                                 | Ruby       |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/mailers/application_mailer.rb                           | Ruby       |          4 |          0 |          1 |          5 |
+| /home/donut/Projects/project1/app/models/ana.rb                                           | Ruby       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/app/models/anecdote.rb                                      | Ruby       |          8 |          0 |          4 |         12 |
+| /home/donut/Projects/project1/app/models/application_record.rb                            | Ruby       |          3 |          0 |          1 |          4 |
+| /home/donut/Projects/project1/app/models/comment.rb                                       | Ruby       |          4 |          0 |          1 |          5 |
+| /home/donut/Projects/project1/app/models/tag.rb                                           | Ruby       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/app/models/theme.rb                                         | Ruby       |          3 |          1 |          1 |          5 |
+| /home/donut/Projects/project1/app/models/user.rb                                          | Ruby       |          9 |          0 |          2 |         11 |
+| /home/donut/Projects/project1/app/views/anas/edit.html.erb                                | erb        |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/views/anas/index.html.erb                               | erb        |         22 |          0 |          2 |         24 |
+| /home/donut/Projects/project1/app/views/anas/new.html.erb                                 | erb        |         10 |          0 |          4 |         14 |
+| /home/donut/Projects/project1/app/views/anas/show.html.erb                                | erb        |         27 |          0 |          1 |         28 |
+| /home/donut/Projects/project1/app/views/anecdotes/_form.html.erb                          | erb        |         14 |          0 |          4 |         18 |
+| /home/donut/Projects/project1/app/views/anecdotes/edit.html.erb                           | erb        |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/views/anecdotes/index.html.erb                          | erb        |         48 |          0 |          3 |         51 |
+| /home/donut/Projects/project1/app/views/anecdotes/new.html.erb                            | erb        |          4 |          0 |          1 |          5 |
+| /home/donut/Projects/project1/app/views/anecdotes/show.html.erb                           | erb        |         70 |          0 |          4 |         74 |
+| /home/donut/Projects/project1/app/views/comments/index.html.erb                           | erb        |         23 |          0 |          4 |         27 |
+| /home/donut/Projects/project1/app/views/layouts/application.html.erb                      | erb        |         36 |          1 |          4 |         41 |
+| /home/donut/Projects/project1/app/views/layouts/mailer.html.erb                           | erb        |         11 |          1 |          2 |         14 |
+| /home/donut/Projects/project1/app/views/layouts/mailer.text.erb                           | erb        |          1 |          0 |          1 |          2 |
+| /home/donut/Projects/project1/app/views/pages/home.html.erb                               | erb        |        110 |          0 |         11 |        121 |
+| /home/donut/Projects/project1/app/views/session/new.html.erb                              | erb        |         13 |          0 |          3 |         16 |
+| /home/donut/Projects/project1/app/views/tags/index.html.erb                               | erb        |          9 |          0 |          2 |         11 |
+| /home/donut/Projects/project1/app/views/tags/new.html.erb                                 | erb        |          2 |          0 |          1 |          3 |
+| /home/donut/Projects/project1/app/views/tags/show.html.erb                                | erb        |         17 |          0 |          1 |         18 |
+| /home/donut/Projects/project1/app/views/users/edit.html.erb                               | erb        |         24 |          0 |          3 |         27 |
+| /home/donut/Projects/project1/app/views/users/index.html.erb                              | erb        |          5 |          0 |          2 |          7 |
+| /home/donut/Projects/project1/app/views/users/new.html.erb                                | erb        |         23 |          3 |          0 |         26 |
+| /home/donut/Projects/project1/app/views/users/show.html.erb                               | erb        |          6 |          0 |          1 |          7 |
+| /home/donut/Projects/project1/config.ru                                                   | Ruby       |          2 |          1 |          3 |          6 |
+| /home/donut/Projects/project1/config/application.rb                                       | Ruby       |         16 |         12 |          6 |         34 |
+| /home/donut/Projects/project1/config/boot.rb                                              | Ruby       |          3 |          0 |          2 |          5 |
+| /home/donut/Projects/project1/config/database.yml                                         | YAML       |         15 |         61 |         10 |         86 |
+| /home/donut/Projects/project1/config/environment.rb                                       | Ruby       |          2 |          2 |          2 |          6 |
+| /home/donut/Projects/project1/config/environments/development.rb                          | Ruby       |         23 |         20 |         16 |         59 |
+| /home/donut/Projects/project1/config/environments/production.rb                           | Ruby       |         21 |         42 |         24 |         87 |
+| /home/donut/Projects/project1/config/environments/test.rb                                 | Ruby       |         15 |         18 |         11 |         44 |
+| /home/donut/Projects/project1/config/initializers/application_controller_renderer.rb      | Ruby       |          0 |          7 |          2 |          9 |
+| /home/donut/Projects/project1/config/initializers/assets.rb                               | Ruby       |          2 |          9 |          4 |         15 |
+| /home/donut/Projects/project1/config/initializers/backtrace_silencers.rb                  | Ruby       |          0 |          5 |          3 |          8 |
+| /home/donut/Projects/project1/config/initializers/content_security_policy.rb              | Ruby       |          0 |         20 |          6 |         26 |
+| /home/donut/Projects/project1/config/initializers/cookies_serializer.rb                   | Ruby       |          1 |          3 |          2 |          6 |
+| /home/donut/Projects/project1/config/initializers/filter_parameter_logging.rb             | Ruby       |          1 |          2 |          2 |          5 |
+| /home/donut/Projects/project1/config/initializers/inflections.rb                          | Ruby       |          0 |         14 |          3 |         17 |
+| /home/donut/Projects/project1/config/initializers/mime_types.rb                           | Ruby       |          0 |          3 |          2 |          5 |
+| /home/donut/Projects/project1/config/initializers/wrap_parameters.rb                      | Ruby       |          3 |          8 |          4 |         15 |
+| /home/donut/Projects/project1/config/locales/en.yml                                       | YAML       |          2 |         30 |          2 |         34 |
+| /home/donut/Projects/project1/config/puma.rb                                              | Ruby       |          6 |         25 |          7 |         38 |
+| /home/donut/Projects/project1/config/routes.rb                                            | Ruby       |         16 |          0 |          3 |         19 |
+| /home/donut/Projects/project1/config/spring.rb                                            | Ruby       |          6 |          0 |          1 |          7 |
+| /home/donut/Projects/project1/db/migrate/20220722053949_create_users.rb                   | Ruby       |          8 |          0 |          1 |          9 |
+| /home/donut/Projects/project1/db/migrate/20220722054002_create_anecdotes.rb               | Ruby       |         12 |          0 |          1 |         13 |
+| /home/donut/Projects/project1/db/migrate/20220722054007_create_anas.rb                    | Ruby       |         11 |          0 |          1 |         12 |
+| /home/donut/Projects/project1/db/migrate/20220722054013_create_tags.rb                    | Ruby       |          9 |          0 |          1 |         10 |
+| /home/donut/Projects/project1/db/migrate/20220722054150_create_anas_tags.rb               | Ruby       |          8 |          0 |          1 |          9 |
+| /home/donut/Projects/project1/db/migrate/20220722054203_create_anecdotes_tags.rb          | Ruby       |          8 |          0 |          1 |          9 |
+| /home/donut/Projects/project1/db/migrate/20220722060924_add_password_digest_to_users.rb   | Ruby       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/db/migrate/20220722061041_add_admin_to_users.rb             | Ruby       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/db/migrate/20220722074215_create_anas_anecdotes.rb          | Ruby       |          8 |          0 |          1 |          9 |
+| /home/donut/Projects/project1/db/migrate/20220726020844_create_themes.rb                  | Ruby       |          9 |          0 |          2 |         11 |
+| /home/donut/Projects/project1/db/migrate/20220726111051_acts_as_votable_migration.rb      | Ruby       |         17 |          0 |          6 |         23 |
+| /home/donut/Projects/project1/db/migrate/20220727002753_add_theme_id_to_users.rb          | Ruby       |          6 |          0 |          1 |          7 |
+| /home/donut/Projects/project1/db/migrate/20220727050249_create_comments.rb                | Ruby       |         10 |          0 |          1 |         11 |
+| /home/donut/Projects/project1/db/migrate/20220727050932_add_comment_id_to_anecdotes.rb    | Ruby       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/db/migrate/20220727052920_add_user_id_to_comments.rb        | Ruby       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/db/migrate/20220727091309_remove_parent_id_from_comments.rb | Ruby       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/db/schema.rb                                                | Ruby       |         74 |         12 |         14 |        100 |
+| /home/donut/Projects/project1/db/seeds.rb                                                 | Ruby       |        130 |         10 |         38 |        178 |
+| /home/donut/Projects/project1/package.json                                                | JSON       |          5 |          0 |          1 |          6 |
+| /home/donut/Projects/project1/public/404.html                                             | HTML       |         61 |          1 |          6 |         68 |
+| /home/donut/Projects/project1/public/422.html                                             | HTML       |         61 |          1 |          6 |         68 |
+| /home/donut/Projects/project1/public/500.html                                             | HTML       |         60 |          1 |          6 |         67 |
+| Total                                                                                     |            |      2,011 |        394 |        476 |      2,881 |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
