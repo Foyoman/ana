@@ -496,6 +496,7 @@ label:checked {
 .tag-table {
     max-width: 60%;
     margin: 0 auto;
+    margin-bottom: 2em;
 }
 
 #myInput {
