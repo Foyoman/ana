@@ -5,11 +5,11 @@
     <% if anecdote_user.theme.present? 
         @theme = anecdote_user.theme.name
     end %>
-    <% if @current_user.present? %>
-        <% if @current_user.voted_for? anecdote %>
-            <% @opaque = "opaque" %>
-        <% else @opaque = "" %>
-        <% end %>
+<% end %>
+<% if @current_user.present? %>
+    <% if @current_user.voted_for? @anecdote %>
+        <% @opaque = "opaque" %>
+    <% else @opaque = "" %>
     <% end %>
 <% end %>
 <div class="anecdote anecdote-show <%= @theme %>">

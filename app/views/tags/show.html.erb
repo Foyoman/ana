@@ -2,7 +2,7 @@
 <p>below are all the anecdotes tagged with this tag</p>
 
 <div class="anecdotes">
-    <% @tag.anecdotes.each do |anecdote| %>
+    <% @tag.anecdotes.order(:upvotes).reverse.each do |anecdote| %>
         <% @theme = 'default' %>
         <% if anecdote.user_id.present? %>
             <% anecdote_user = User.find anecdote.user_id %>
