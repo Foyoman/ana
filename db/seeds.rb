@@ -157,7 +157,7 @@ d25 = Anecdote.create :title => "Thank you Joel and Loden", :content => "Thanks 
 d25.tags << t40
 
 d26 = Anecdote.create :title => "and thanks to the rest i guess", :content => "Guys guess what? We're officially at the halfway mark!! 6 weeks in and 6 weeks to go! This calls for celebration :winky_face: ;) Thank you guys for being such an amazing class and for making the classroom environment so cozy friendly warm and lovely. I like you all :smiley_face: :). And guess what again? Happy birthday to you, haaappy birthday to youuu, happy birthday deaarr EliASS, happy birthday to youuuuuuuu. Hip hip! HOORAY. Hip hip! HOORAY. Hip Hip! HOORAY."
-d25.tags << t40
+d26.tags << t40
 
 puts "#{ Anecdote.count } anecdotes"
 
