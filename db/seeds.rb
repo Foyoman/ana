@@ -21,7 +21,7 @@ Tag.destroy_all
 
 t1 = Tag.create :name => 'family'
 t2 = Tag.create :name => 'relationship'
-t3 = Tag.create :name => 'academia'
+t3 = Tag.create :name => 'life'
 t4 = Tag.create :name => 'spirituality'
 t5 = Tag.create :name => 'body'
 t6 = Tag.create :name => 'pets'
@@ -35,7 +35,7 @@ t13 = Tag.create :name => 'health'
 t14 = Tag.create :name => 'work'
 t15 = Tag.create :name => 'friends'
 t16 = Tag.create :name => 'social life'
-t17 = Tag.create :name => 'technology'
+t17 = Tag.create :name => 'philosophy'
 t18 = Tag.create :name => 'procrastination'
 t19 = Tag.create :name => 'school'
 t20 = Tag.create :name => 'emotions'
@@ -57,7 +57,7 @@ t35 = Tag.create :name => 'french'
 t36 = Tag.create :name => 'spanish'
 t37 = Tag.create :name => 'loss'
 t38 = Tag.create :name => 'fear'
-t39 = Tag.create :name => 'philosophy'
+t39 = Tag.create :name => 'anger'
 
 puts "#{ Tag.count } tags"
 
@@ -134,7 +134,22 @@ d18.tags << t35 << t21
 d19 = Anecdote.create :title => "La muerte, el miedo y lo infinito.", :content => %(Ayer estuve reflexionando sobre la existencia del ser humano y los miedos, quise ir un poco más allá de la ya muy vista reflexión de que todos los miedos vienen de una manera u otra del miedo primitivo a la muerte y con esta reflexión me vienen dudas; ¿es posible que una persona no tenga nada de miedo a la muerte? incluso en el caso de que una persona se suicide, ¿es posible que esa persona no sienta miedo en la caída o justo antes de apretar un gatillo? personalmente creo que no, creo que aunque sea por un segundo esas personas pasan miedo. Esto me recuerda a una frase de Secretariat (personaje de BH) "Antes de saltar, ¿por qué no vi la vista en medio de la caída?" reflejando el miedo que tuvo en medio de la caída cuando se tiró por un puente. \n
 Y tras estas preguntas que me planteé me di cuenta de algo que nunca había pensado; \n
 Sí, la muerte da miedo, pero alguna vez os habéis parado a pensar el miedo que da no poder morir nunca? estar ahí para siempre? creo que a los humanos les da miedo cualquier para siempre, da igual si es un descanso para siempre o una vida para siempre pero ese término, un término infinito, se escapa de nuestras manos porque no somos infinitos y pensar en que en algún momento estaremos viviendo un infinito, aunque puede que no seamos conscientes de ello, es aterrador.)
-d19.tags << t36 << t38 << t34 << t39
+d19.tags << t36 << t38 << t34 << t17
+
+d20 = Anecdote.create :title => "¿Vale la pena vivir?", :content => %(¿Es la vida un sufrimiento innecesario? La única respuesta objetiva es que sí, ¿Implica esto que entonces, como diría Schopenhauer, mejor sería no haber nacido? Quizá no queramos saber la respuesta.)
+d20.tags << t36 << t17 << t3 << t34 << t33
+
+d21 = Anecdote.create :title => "Tengo problemas, necesito ayuda de ustedes, no tengo otro lugar", :content => %(Mi novia y yo hoy peleamos, el motivo fue en publico con mucha gente viendo ella le dio un pico a una amiga, sabienda ya que a mi no me gustan ese tipo de charlas, solo pienso que es una falta de respeto en la relacion. El punto es que me fui con mis amigos a hablar y a que ellos me acosejaran, muchos consejos fueron malos y no los segui. Despues de esto me di cuenta que ella estaba enojada tambien. Por la tarde hable con ella y me dijo basicamente que la tenía que buscar para hablar despues de lo que hizo y de lo que me hizo sentir. Quiero saber su opinion. Me estoy empezando a sentir muy mal y depresivo por esa y otras situaciones, en verdad la amo)
+d21.tags << t36 << t2 << t22
+
+d22 = Anecdote.create :title => "Bonne nouvelle !", :content => %(Peut-être que certains vont trouver ce post déplacé ou vont s'énerver parce que ce n'est pas leur cas mais ... Je suis vraiment heureuse. J'ai été en dépression plus de la moitié de ma vie, j'ai tenté de me suicider à plusieurs reprises et maintenant, je vais bien. Ca me fait vraiment bizarre de me le dire, et surtout de l'écrire mais: oui, je vais bien. Je pense que comme un ancien fumeur, on est jamais à l'abri de retomber dans la depression mais même si elle dure 1,3 ou 15 ans, je vous jure que vous pouvez vous en sortir. Je ne suis pas là pour donner des conseils ou faire la morale, chacun gère comme il peut, je voulais juste dire que ... Voilà, c'est possible. Vous en êtes capables. Buvez de l'eau aussi)
+d22.tags << t35 << t29 << t8 << t20
+
+d23 = Anecdote.create :title => "Es una Red Flag?", :content => %(El día de ahora me comenzó a seguir un hombre extraño, de repente entre a una tienda a comprar y cuando salí el hombre estaba parado por una tienda cuando subi las gradas eléctricas vi que venía atrás de mi, me metí a una tienda para ver si me venía siguiendo a mi, y se quedo parado por una tienda observandome, y me fui a la vitrina y me le quedó viendo, llame un taxi para irme de regreso a mi casa y no hay disponibles, del miedo le llamo a una amiga para que me acompañe o vea como estoy, le llamo a mi novio y me desvía la llamada, (Pasa ocupado trabajando) cuando me contesta le digo que lea los mensajes que le envié para que no me escuchen, y me dice es en serio, le digo venirme a traer por favor, tengo miedo, y me dice estas segura, no son tus nervios, cuando me dijo eso me quede tan impactada y confundida que solo le colgué, no hizo el intento de volver a llamarme, le dije a mi amiga acompáñame a mi casa, que siento miedo y el solo me escribió llama a la policía si es en serio, y ya no me ah contestado. Me metí a un café, Pero estoy viendo para afuera para ver si no viene el hombre, porque se acercó otro e hizo que le hacía una pregunta al vigilante pero se me quedó siempre viendo a mi. Estoy esperando a mí amiga para irme a mi casa. Estuvo bien como actuó mi Novio?)
+d23.tags << t36 << t38
+
+d24 = Anecdote.create :title => "Le poids psychologique de la recherche de logement", :content => "Devoir étaler ses revenus et ceux de sa famille à chaque putain de random qui loue une piaule, c'est humiliant. Se voir jugé et comparé dans une compétition pour devenir l'heureux élu qui gagnera la chance de passer la moitié de son temps de travail à payer 35m², c'est humiliant. Devoir quémander le droit d'avoir un endroit où vivre en dehors de ton taf, c'est humiliant. Se sentir moins que rien parce que celui en face est propriétaireTM et a droit de vie ou de mort sur toi, tu peux bien dormir dans une cave que c'est pas son problème, c'est putain d'humiliant. Bordel de merde j'en peux plus."
+d24.tags << t35 << t39 << t14 << t25
 
 puts "#{ Anecdote.count } anecdotes"
 
@@ -162,15 +177,15 @@ puts "#{ Theme.count } themes"
 
 # Users and anecdotes #
 
-u2.anecdotes << d2 << d1 # egg
-u3.anecdotes << d3 << d11 # hotdogs
-u4.anecdotes << d4 << d12 # drumstick
-u5.anecdotes << d5 # kfc
-u6.anecdotes << d6 # donut
-u7.anecdotes << d7 # rooster
-u8.anecdotes << d8 # nugget
-u9.anecdotes << d9 # chicomarx
-u10.anecdotes << d10 # karlmarx
+u2.anecdotes << d2 << d1 << d19 # egg
+u3.anecdotes << d3 << d11 << d20 # hotdogs
+u4.anecdotes << d4 << d12 << d21 # drumstick
+u5.anecdotes << d5 << d13 << d22 # kfc
+u6.anecdotes << d6 << d14 << d23 # donut
+u7.anecdotes << d7 << d15 << d24 # rooster
+u8.anecdotes << d8 << d16 # nugget
+u9.anecdotes << d9 << d17 # chicomarx
+u10.anecdotes << d10 << d18 # karlmarx
 puts "Users and anecdotes"
 
 # End #

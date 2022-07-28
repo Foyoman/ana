@@ -70,9 +70,11 @@
     <br>
     </br>
     </h2>
-    
-    <h2>your feed</h2>
-    <%unless @current_user.tags.empty? %>
+
+    <h2 class="inline">your feed </h2><p class="inline"><%= link_to '+customise', edit_user_path(@current_user.id) %></p>
+    <%unless @current_user.tags.empty? %> 
+    <br>
+    </br>
         <h3 class="inline">followed tags:</h3>
         <% @current_user.tags.each do |tag| %>
             <div class="tag">

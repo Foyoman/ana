@@ -3,7 +3,7 @@
 <%= form_for @ana do |f| %>
     <div class="length-input centered">
         <p>the number of anecdotes your ana will include (max 9): </p>
-        <%= number_field_tag 'length', nil, max: 9, :maxlength => 1, :class => 'number-field' %>
+        <%= number_field_tag 'length', nil, max: 9, :maxlength => 1, :class => 'number-field', :required => true %>
     </div>
 
     <h3 class='centered'>select the tags your ana will generate from</h3>
