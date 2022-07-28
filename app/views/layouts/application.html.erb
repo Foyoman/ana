@@ -19,7 +19,15 @@
           <p class="definition">noun /ˈɑːnə/ : a collection of anecdotes, or memorable sayings.</p>
         </div>
         <div class="links">
-          <%= link_to @current_user.username, edit_user_path(@current_user) if @current_user.present? %>
+          <% if @current_user.present? %>
+            <% @theme = "default" %>
+            <% if @current_user.theme.present? %>
+              <% @theme = @current_user.theme.name %>
+            <% end %>
+            <div class="user <%= @theme %>">
+              <%= link_to @current_user.username, edit_user_path(@current_user) %>
+            </div>
+          <% end %>
           <%= link_to 'home', root_path %>
           <%= link_to '+ana', new_ana_path %>
           <%= link_to 'anecdotes', anecdotes_path %>

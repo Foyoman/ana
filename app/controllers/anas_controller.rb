@@ -16,14 +16,21 @@ class AnasController < ApplicationController
   def create 
     ana = Ana.create ana_params
     @current_user.anas << ana
-    ana.anecdotes 
 
+    length = params[:length].to_i
     tag_ids = params[:ana][:tag_ids].reject(& :empty?)
+    all_anecdotes = []
+
     tag_ids.map(&:to_i).each do |tag_id|
       tag = Tag.find tag_id
       tag.anecdotes.each do |anecdote|
-        ana.anecdotes << anecdote unless ana.anecdotes.include? anecdote
+        all_anecdotes << anecdote unless all_anecdotes.include? anecdote
       end
+    end
+
+    sampled_anecdotes = all_anecdotes.sample length
+    sampled_anecdotes.each do |anecdote|
+      ana.anecdotes << anecdote
     end
 
     ana.anecdotes.each do |anecdote|
