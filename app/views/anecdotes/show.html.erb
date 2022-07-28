@@ -6,9 +6,23 @@
         theme = anecdote_user.theme
         @theme = theme.name
     end %>
+    <% if @current_user.present? %>
+        <% if @current_user.voted_for? anecdote %>
+            <% @opaque = "opaque" %>
+        <% else @opaque = "" %>
+        <% end %>
+    <% end %>
 <% end %>
 <div class="anecdote anecdote-show <%= @theme %>">
-    <h1 class="top"><%= @anecdote.title %></h1>
+    <div class="top-g">
+        <h1 class="top"><%= @anecdote.title %></h1>
+        <div class="hearts <%= @opaque %>">
+            <p><%= @anecdote.get_upvotes.size %></p>
+            <%= link_to like_anecdote_path(@anecdote), method: :put do %>
+                <%= image_tag "heart.png", alt: "heart", :class => 'icon' %>
+            <% end %>
+        </div>
+    </div>
     <p>"<%= @anecdote.content %>"</p>
 
     <div class="bottom">

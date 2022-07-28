@@ -3,16 +3,56 @@
 
 <div class="anecdotes">
     <% @tag.anecdotes.each do |anecdote| %>
-        <div class="anecdote">
-            <h3><%= anecdote.title %></h3>
-            <p>"<%= anecdote.content %>"</p>
-            <p class="tags">
-                <% anecdote.tags.each do |tag| %>
-                    <div class="tag zero-six-opacity">
-                        <%= tag.name %>
+        <% @theme = 'default' %>
+        <% if anecdote.user_id.present? %>
+            <% anecdote_user = User.find anecdote.user_id %>
+            <% if anecdote_user.theme.present? 
+                theme = anecdote_user.theme
+                @theme = theme.name
+            end %>
+        <% end %>
+        <% if @current_user.present? %>
+            <% if @current_user.voted_for? anecdote %>
+                <% @opaque = "opaque" %>
+            <% else @opaque = "" %>
+            <% end %>
+        <% end %>
+        <div class="anecdote <%= @theme %>">
+            <div class="top">
+                <h3><%= anecdote.title %></h3>
+                <div class="hearts-comments">
+                    <div class="comment-link">
+                        <p><%= anecdote.comments.size %></p>
+                        <%= link_to anecdote do %>
+                            <%= image_tag "comment.png", :class => 'icon comment-icon' %>
+                        <% end %>
                     </div>
+                    <div class="hearts <%= @opaque %>">
+                        <p><%= anecdote.get_upvotes.size %></p>
+                        <%= link_to like_anecdote_path(anecdote), method: :put do %>
+                            <%= image_tag "heart.png", alt: "heart", :class => 'icon' %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            <p>"<%= anecdote.content %>"</p>
+            <div class="bottom">
+                <div class="tags">
+                    <% anecdote.tags.each do |tag| %>
+                        <div class="tag zero-six-opacity">
+                            <%= tag.name %>
+                        </div>
+                    <% end %>
+                </div>
+                <% if @current_user.present? %>
+                    <% if @current_user.id == anecdote.user_id or @current_user.admin? %>
+                        <div class="controls">
+                            <div class="edit"><%= link_to 'edit', edit_anecdote_path(anecdote) %></div>
+                            <div class="delete"><%= link_to 'delete', anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %></div>
+                        </div>
+                    <% end %>
                 <% end %>
-            </p>
+            </div>
         </div>
     <% end %>
 </div>

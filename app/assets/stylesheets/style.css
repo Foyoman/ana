@@ -126,7 +126,7 @@ a {
 
 .anecdote {
     transition: all 0.2s;
-    padding: 0 1em 0.7em 1em;
+    padding: 0.6em 1em 0.7em 1em;
     max-width: 100%;
     border: 1px solid white;
     border-radius: 0.5em;
@@ -225,28 +225,34 @@ a {
     justify-content: space-between;
 }
 
+.top-g {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-g > .hearts {
+    margin: 0 0.5em 0 0;
+}
+
 .icon {
     transition: all 0.2s;
     max-height: 30px;
 }
 
-.icon:hover, .hearts:hover {
+.icon:hover, .hearts:hover, .comment-link:hover {
     opacity: 1;
 }
 
-.hearts {
+.hearts, .comment-link {
+    transition: all 0.2s;
     opacity: 0.4;
     display: flex;
     align-items: center;
     gap: 0.3em;
 }
 
-.hearts > p {
+.hearts > p, .comment-link > p {
     padding-bottom: 8px;
-}
-
-.comment-icon {
-    opacity: 0.4;
 }
 
 .hearts-comments {

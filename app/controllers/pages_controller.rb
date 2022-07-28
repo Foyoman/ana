@@ -9,8 +9,6 @@ class PagesController < ApplicationController
           end
         end
       end
-    # @unique_anecdotes.flatten!
-    # @unique_anecdotes = @unique_anecdotes.sort.reverse
-    @unique_anecdotes.sort_by! &:upvotes
+    @unique_anecdotes.sort_by!(&:upvotes).reverse!
   end
 end

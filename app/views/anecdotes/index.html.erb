@@ -12,19 +12,28 @@
                 @theme = theme.name
             end %>
         <% end %>
+        <% if @current_user.present? %>
+            <% if @current_user.voted_for? anecdote %>
+                <% @opaque = "opaque" %>
+            <% else @opaque = "" %>
+            <% end %>
+        <% end %>
         <div class="anecdote <%= @theme %>">
             <div class="top">
                 <h3><%= anecdote.title %></h3>
                 <div class="hearts-comments">
-                    <div class="hearts">
+                    <div class="comment-link">
+                        <p><%= anecdote.comments.size %></p>
+                        <%= link_to anecdote do %>
+                            <%= image_tag "comment.png", :class => 'icon comment-icon' %>
+                        <% end %>
+                    </div>
+                    <div class="hearts <%= @opaque %>">
                         <p><%= anecdote.get_upvotes.size %></p>
                         <%= link_to like_anecdote_path(anecdote), method: :put do %>
                             <%= image_tag "heart.png", alt: "heart", :class => 'icon' %>
                         <% end %>
                     </div>
-                    <%= link_to anecdote do %>
-                        <%= image_tag "comment.png", :class => 'icon comment-icon' %>
-                    <% end %>
                 </div>
             </div>
             <p>"<%= anecdote.content %>"</p>

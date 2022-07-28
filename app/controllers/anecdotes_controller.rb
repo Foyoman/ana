@@ -2,8 +2,7 @@ class AnecdotesController < ApplicationController
   before_action :check_for_login, :only => [:new, :create, :edit, :upvote, :downvote]
   
   def index
-    anecdotes = Anecdote.all
-    @anecdotes = anecdotes.sort.reverse
+    @anecdotes = Anecdote.all.order(:upvotes).reverse    
   end
 
   def show
@@ -50,10 +49,19 @@ class AnecdotesController < ApplicationController
 
   def upvote
     anecdote = Anecdote.find params[:id]
-    anecdote.liked_by @current_user
+    
+    if @current_user.voted_for? anecdote
+      anecdote.unliked_by @current_user 
+    else
+      anecdote.liked_by @current_user
+    end
+    
     anecdote.upvotes = anecdote.get_upvotes.size
     anecdote.save
-    redirect_to anecdotes_path
+    session[:return_to] ||= request.referer
+    redirect_to session.delete(:return_to)
+
+    # redirect_to anecdotes_path
   end
 
   def downvote
