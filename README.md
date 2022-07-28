@@ -63,7 +63,6 @@ Click [_here_](https://ana-anecdotes.herokuapp.com/) to join the community and s
 ---------------------
 
 ana - noun /ˈɑːnə/ : a collection of anecdotes, or memorable sayings.
-
 anecdote - noun /ˈanɪkdəʊt/ : a short amusing or interesting story about a real incident or person.
 
 get something off your chest, express your emotions, share some advice, tell a funny story, or tell us about your pet. anything goes. ana is a web-app designed to provide a medium for people to express themselves, to be exposed to anecdotes from other people's lives and to not feel alone in what we going through.
