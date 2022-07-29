@@ -571,6 +571,7 @@ label:checked {
     padding: 0.2em 0.4em;
     margin: 0.2em 0;
     opacity: 0.4;
+    cursor: pointer;
 }
 
 .theme:hover, .theme:active, .opaque, .user:hover {

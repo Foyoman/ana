@@ -132,7 +132,7 @@
                             <% if @current_user.id == anecdote.user_id or @current_user.admin? %>
                                 <div class="controls">
                                     <div class="edit"><%= link_to 'edit', edit_anecdote_path(anecdote) %></div>
-                                    <div class="delete"><%= link_to 'delete', anecdote, :method => 'delete', :data => { :confirm => 'are you sure?' } %></div>
+                                    <div class="delete"><%= link_to 'delete', anecdote, :method => 'delete', :data => { :confirm => 'confirm' } %></div>
                                 </div>
                             <% end %>
                         <% end %>

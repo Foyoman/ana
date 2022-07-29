@@ -8,7 +8,7 @@ class TagsController < ApplicationController
     @tag_anecdotes = @tag.anecdotes.order(:upvotes).reverse
     if @current_user.present?
       if @current_user.sort == 'new'
-        @tag_anecdotes = anecdotes.sort.reverse
+        @tag_anecdotes = @tag_anecdotes.sort.reverse
       end
     end
   end

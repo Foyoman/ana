@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def edit
     @tags = Tag.all
     @themes = Theme.all
+    @current_theme = @current_user.theme.name if @current_user.theme.present?
   end
 
   def update
@@ -38,7 +39,7 @@ class UsersController < ApplicationController
     @current_user.sort = params[:user][:sort]
 
     theme = Theme.find_by_name params[:user][:theme]
-    @current_user.theme = theme
+    @current_user.theme = theme unless theme.nil?
 
     @current_user.save
     redirect_to root_path

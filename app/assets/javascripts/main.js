@@ -33,13 +33,8 @@ $(document).ready(function() {
     $('input[checked="checked"]').parent().addClass("checked")
 
     $('.theme').mouseup(function() {
-        if ($(this).hasClass('opaque')) {
-            $(this).removeClass('opaque');
-            $('.theme').removeClass('opaque');
-        } else {
-            $('.theme').removeClass('opaque');
-            $(this).addClass('opaque');
-        }
+        $('.theme').removeClass('opaque');
+        $(this).addClass('opaque');
     });
 
     $('.sort').mouseup(function() {

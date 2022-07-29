@@ -26,7 +26,8 @@
             <h2>themes</h2>
             <p>a personal theme that applies to only your posts</p>
             <% @themes.each do |theme| %>
-                <label class="theme <%= theme.name %>">
+                <% opaque = "opaque" if @current_theme.present? %>
+                <label class="theme <%= theme.name %> <%= opaque if theme.name == @current_theme %>">
                     <p><%= theme.name %></p>
                     <%= f.radio_button :theme, theme.name %>
                 </label>
