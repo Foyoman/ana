@@ -14,7 +14,7 @@ class SessionController < ApplicationController
       else
         # redirect_to login (so they can try again)
         # tell them sorry
-        flash[:error] = "Sorry, login failed."
+        flash[:error] = "login failed"
         redirect_to login_path
       end
     end
