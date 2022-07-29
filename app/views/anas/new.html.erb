@@ -8,7 +8,7 @@
 
     <h3 class='centered'>select the tags your ana will generate from</h3>
     <div class="tags-checks">
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, { hide_label: true }) do |b|
+        <%= f.collection_check_boxes(:tag_ids, Tag.all.order(:name), :id, :name, { hide_label: true }) do |b|
             b.label(:"data-value" => b.value) { b.check_box + b.text }
             end %>
     </div>
