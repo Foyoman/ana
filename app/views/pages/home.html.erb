@@ -22,7 +22,7 @@
     </div>
     <br>
 
-    <h2 class="inline">all anecdotes </h2><p class="inline">sort by: new<p>
+    <h2 class="inline">all anecdotes </h2><p class="inline">sort by: top<p>
     <div class="anecdotes">
         <% @anecdotes.each do |anecdote| %>
             <% @theme = 'default' %>
@@ -82,7 +82,11 @@
             </div>
         <% end %>
         <br>
-        <p>sort by: top<p>
+        <% if @current_user.sort == 'new' %>
+            <p>sorted by: new<p>
+        <% elsif @current_user.sort == 'top' %>
+            <p>sorted by: top</p>
+        <% end %>
         <div class="anecdotes">
             <% @unique_anecdotes.each do |anecdote|  %>
                 <% @theme = 'default' %>

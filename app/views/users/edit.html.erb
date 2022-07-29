@@ -1,6 +1,20 @@
 <%= form_for @current_user do |f| %>
     <div class="centered">
-        <h2>tags</h2>
+        <div class="sort-box">
+            <h3 class="small-marge">sort</h3>
+            <div class="tags-checks small-marge">
+                <label class="sort">
+                    top
+                    <%= f.radio_button :sort, 'top' %>
+                </label>
+                <label class="sort">
+                    new
+                    <%= f.radio_button :sort, 'new' %>
+                </label>
+            </div>
+        </div>
+
+        <h2 class ="tags-title">tags</h2>
         <p>follow/unfollow tags to customise your feed</p>
         <div class="tags-checks">
             <%= f.collection_check_boxes(:tag_ids, Tag.all.order(:name), :id, :name, { hide_label: true }) do |b|

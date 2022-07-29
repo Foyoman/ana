@@ -41,5 +41,10 @@ $(document).ready(function() {
             $(this).addClass('opaque');
         }
     });
+
+    $('.sort').mouseup(function() {
+        $('.sort').removeClass('checked');
+        $(this).addClass('checked');
+    });
     
 });

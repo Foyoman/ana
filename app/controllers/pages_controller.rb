@@ -8,7 +8,11 @@ class PagesController < ApplicationController
           @unique_anecdotes << anecdote unless @unique_anecdotes.include? anecdote
           end
         end
+      if @current_user.sort == 'new'
+        @unique_anecdotes = @unique_anecdotes.sort.reverse
+      else
+        @unique_anecdotes.sort_by!(&:upvotes).reverse!
       end
-    @unique_anecdotes.sort_by!(&:upvotes).reverse!
+    end
   end
 end

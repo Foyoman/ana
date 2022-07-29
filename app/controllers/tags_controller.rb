@@ -5,6 +5,12 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find params[:id]
+    @tag_anecdotes = @tag.anecdotes.order(:upvotes).reverse
+    if @current_user.present?
+      if @current_user.sort == 'new'
+        @tag_anecdotes = anecdotes.sort.reverse
+      end
+    end
   end
 
   def new

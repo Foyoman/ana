@@ -8,7 +8,7 @@
     
     <h2>tags</h2>
     <div class="tags-checks">
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name, { hide_label: true }) do |b|
+        <%= f.collection_check_boxes(:tag_ids, Tag.all.order(:name), :id, :name, { hide_label: true }) do |b|
             b.label(:"data-value" => b.value) { b.check_box + b.text }
             end %>
     </div>

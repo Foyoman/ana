@@ -2,7 +2,12 @@ class AnecdotesController < ApplicationController
   before_action :check_for_login, :only => [:new, :create, :edit, :upvote, :downvote]
   
   def index
-    @anecdotes = Anecdote.all.order(:upvotes).reverse    
+    @anecdotes = Anecdote.all.order(:upvotes).reverse
+    if @current_user.present?
+      if @current_user.sort == 'new'
+        @anecdotes = @anecdotes.sort.reverse
+      end
+    end
   end
 
   def show

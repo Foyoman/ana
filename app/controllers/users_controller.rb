@@ -35,6 +35,8 @@ class UsersController < ApplicationController
       @current_user.tags << tag
     end
 
+    @current_user.sort = params[:user][:sort]
+
     theme = Theme.find_by_name params[:user][:theme]
     @current_user.theme = theme
 

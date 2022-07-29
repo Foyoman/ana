@@ -485,12 +485,30 @@ input[type="checkbox"]:checked + label {
     flex-shrink: 0;
 }
 
+.tags-title {
+    margin: 0.3em;
+}
+
 input[type='checkbox'] {
     display: none;
 }
 
 label:checked {
     background: brown;
+}
+
+.sort-box > h3 {
+    padding-bottom: 1em;
+}
+
+.sort-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 10em;
+    margin: 0 auto;
+    margin-top: 1.5em;
+    max-height: 2em;
 }
 
 .tag-table {
