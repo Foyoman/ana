@@ -2,6 +2,12 @@
 
 <p><%= link_to "+ contribute", new_anecdote_path %></p>
 
+<% if @current_user.present? && @current_user.sort == 'new' %>
+    <p>sorted by: new</p>
+<% else %>
+    <p>sorted by: top</p>
+<% end %>
+
 <div class="anecdotes">
     <% @anecdotes.each do |anecdote| %>
         <% @theme = 'default' %>
