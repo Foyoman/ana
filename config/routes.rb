@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       put "dislike", to: "anecdotes#downvote"
     end
   end
-  resources :tags, :except => [:edit]
+  resources :tags, :only => [:index, :show]
   
   get '/login' => 'session#new'
   post '/login' => 'session#create'
