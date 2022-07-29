@@ -28,7 +28,7 @@ class AnecdotesController < ApplicationController
       tag = Tag.find tag_id
       anecdote.tags << tag
     end
-    redirect_to anecdotes_path
+    redirect_to anecdote
   end
 
   def edit
