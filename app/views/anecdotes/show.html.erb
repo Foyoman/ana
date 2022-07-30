@@ -14,7 +14,7 @@
 <% end %>
 <div class="anecdote anecdote-show <%= @theme %>">
     <div class="top-g">
-        <h1 class="top"><%= @anecdote.title %></h1>
+        <h2 class="top"><%= @anecdote.title %></h2>
         <div class="hearts <%= @opaque %>">
             <p><%= @anecdote.get_upvotes.size %></p>
             <%= link_to like_anecdote_path(@anecdote), method: :put do %>
