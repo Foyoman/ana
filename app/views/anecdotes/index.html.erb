@@ -1,12 +1,13 @@
-<h1>all anecdotes</h1>
+<h1 class="no-bottom-marge">all anecdotes</h1>
 
-<p><%= link_to "+ contribute", new_anecdote_path %></p>
-
-<% if @current_user.present? && @current_user.sort == 'new' %>
-    <p>sorted by: new</p>
-<% else %>
-    <p>sorted by: top</p>
-<% end %>
+<div class="sort-contribute">
+    <% if @current_user.present? && @current_user.sort == 'new' %>
+        <p>sorted by: new</p>
+    <% else %>
+        <p>sorted by: top</p>
+    <% end %>
+    <p><%= link_to "+ contribute", new_anecdote_path %></p>
+</div>
 
 <div class="anecdotes">
     <% @anecdotes.each do |anecdote| %>

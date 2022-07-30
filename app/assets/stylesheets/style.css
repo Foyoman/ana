@@ -105,6 +105,16 @@ a {
     display: inline;
 }
 
+.no-bottom-marge {
+    margin-bottom: 0;
+}
+
+.sort-contribute {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .anas {
     display: flex;
     flex-wrap: wrap;

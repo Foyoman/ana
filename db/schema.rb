@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2022_07_29_101900) do
     t.text "title"
     t.text "content"
     t.integer "upvotes", default: 0
-    t.integer "favourites", default: 0
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,7 +38,6 @@ ActiveRecord::Schema.define(version: 2022_07_29_101900) do
     t.text "title"
     t.text "content"
     t.integer "upvotes", default: 0
-    t.integer "favourites", default: 0
     t.integer "user_id"
     t.integer "tag_id"
     t.datetime "created_at", null: false

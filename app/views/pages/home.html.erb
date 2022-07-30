@@ -82,11 +82,16 @@
             </div>
         <% end %>
         <br>
-        <% if @current_user.sort == 'new' %>
-            <p>sorted by: new<p>
-        <% elsif @current_user.sort == 'top' %>
-            <p>sorted by: top</p>
-        <% end %>
+
+        <div class="sort-contribute">
+            <% if @current_user.sort == 'new' %>
+                <p>sorted by: new<p>
+            <% elsif @current_user.sort == 'top' %>
+                <p>sorted by: top</p>
+            <% end %>
+            <p><%= link_to "+contribute", new_anecdote_path %></p>
+        </div>
+
         <div class="anecdotes">
             <% @unique_anecdotes.each do |anecdote|  %>
                 <% @theme = 'default' %>
