@@ -350,6 +350,10 @@ a {
     margin: 0.2em;
 }
 
+.tag > a {
+    color: inherit;
+}
+
 .length-input > p {
     display: inline;
 }
@@ -465,7 +469,7 @@ input {
     cursor: pointer;
 }
 
-.tag:hover {
+.tags > .tag:hover {
     cursor: default;
 }
 
@@ -519,6 +523,11 @@ label:checked {
     margin: 0 auto;
     margin-top: 1.5em;
     max-height: 2em;
+}
+
+.sort {
+    align-items: flex-end;
+    max-height: 1.2em;
 }
 
 .tag-table {
