@@ -47,7 +47,7 @@
                 <div class="tags">
                     <% anecdote.tags.each do |tag| %>
                         <div class="tag zero-six-opacity">
-                            <%= tag.name %>
+                            <%= link_to tag.name, tag %>
                         </div>
                     <% end %>
                 </div>
