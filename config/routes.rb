@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
 
-  resources :users
-  resources :anas
+  resources :users, :except => [:show, :destroy] # TODO: add show/destroy
+  resources :anas, :except => [:index, :edit, :update, :destroy] # TODO: add destroy
   resources :anecdotes do
     resources :comments, :only => [:new, :create, :destroy]
 
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       put "dislike", to: "anecdotes#downvote"
     end
   end
-  resources :tags, :only => [:index, :show]
+  resources :tags, :only => [:index, :show] # TODO: possibly add new, create, destroy
   
   get '/login' => 'session#new'
   post '/login' => 'session#create'
