@@ -1,10 +1,6 @@
 class AnasController < ApplicationController
   before_action :check_for_login, :only => [:new, :create, :edit]
 
-  def index
-    @anas = Ana.all
-  end
-
   def show
     @ana = Ana.find params[:id]
   end
@@ -40,9 +36,6 @@ class AnasController < ApplicationController
     end
 
     redirect_to ana
-  end
-
-  def edit
   end
 
   private

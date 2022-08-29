@@ -1,13 +1,6 @@
 class CommentsController < ApplicationController
     before_action :check_for_login, :only => [:new, :create, :destroy] 
 
-    def index 
-        @comments = Comment.all
-    end
-    
-    def show
-    end
-
     def new
         @anecdote = Anecdote.find params[:anecdote_id]
         @comment = @post.comments.new parent_id: params[:parent_id], user_id: params[:user_id]
@@ -26,9 +19,6 @@ class CommentsController < ApplicationController
         end
 
         # redirect_to @anecdote
-    end
-
-    def update
     end
 
     def destroy
