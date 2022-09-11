@@ -8,7 +8,7 @@ ana - noun /ˈɑːnə/ : a collection of anecdotes, or memorable sayings.
 
 anecdote - noun /ˈanɪkdəʊt/ : a short amusing or interesting story about a real incident or person.
 
-Get something off your chest, express your emotions, share some advice, tell a funny story, or tell us about your pet. anything goes. ana is a web-app designed to provide a medium for people to express themselves, to be exposed to anecdotes from other people's lives and to not feel alone in what we going through.
+Get something off your chest, express your emotions, share some advice, tell a funny story, or tell us about your pet. Anything goes. ana is a web-app designed to provide a medium for people to express themselves, to be exposed to anecdotes from other people's lives and to not feel alone in what we going through.
 
 - Create an account and follow tags to customise your feed.
 - Share an anecdote to contribute to this sites' ana and have your story shared with the world.
