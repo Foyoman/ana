@@ -1,6 +1,6 @@
 # ana - forum for anecdotes
 
-Click [_here_](https://ana-anecdotes.herokuapp.com/) to join the community and share some anecdotes.
+Click [_here_](https://ana-anecdotal.herokuapp.com/) to join the community and share some anecdotes.
 
 ---------------------
 
