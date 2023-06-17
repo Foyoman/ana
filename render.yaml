@@ -1,7 +1,7 @@
 databases:
   - name: ana
     databaseName: ana
-    user: ana
+    user: foyoman
 
 services:
   - type: web
