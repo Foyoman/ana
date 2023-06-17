@@ -1,14 +1,14 @@
 databases:
   - name: ana
     databaseName: ana
-    user: foyoman
+    user: ana
 
 services:
   - type: web
     name: ana
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: bundle exec rails s
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
